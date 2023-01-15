@@ -10,7 +10,7 @@ import SwiftUI
 struct ContentFilterView: View {
     
     var body: some View {
-        VStack {
+        Form {
             Text("For country")
             Text("Most liked")
             Text("Most read")
