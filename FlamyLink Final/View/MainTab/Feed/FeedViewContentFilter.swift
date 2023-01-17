@@ -11,7 +11,7 @@ struct FeedViewContentFilter: View {
     @State private var selectedFilter: FeedViewContentType = .publications
     var body: some View {
         HStack {
-            ForEach(FeedViewContentType.allCases, id: \.rawValue) { item in
+            ForEach(FeedViewContentType.allCases, id: \.self) { item in
                 VStack {
                     Text(item.type)
                         .font(.subheadline)

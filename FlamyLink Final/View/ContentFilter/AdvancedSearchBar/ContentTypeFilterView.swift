@@ -13,7 +13,7 @@ struct ContentTypeFilterView: View {
     
     var body: some View {
         Menu {
-            ForEach(ContentType.allCases, id: \.rawValue) { item in
+            ForEach(ContentType.allCases, id: \.self) { item in
                 Button {
                     self.selectedContentType = item
                 } label: {
