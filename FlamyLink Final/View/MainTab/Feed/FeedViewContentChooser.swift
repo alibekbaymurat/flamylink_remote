@@ -1,5 +1,5 @@
 //
-//  FeedViewContentFilter.swift
+//  FeedViewContentChooser.swift
 //  FlamyLink Final
 //
 //  Created by Алибек Баймурат on 11.12.2022.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct FeedViewContentFilter: View {
+struct FeedViewContentChooser: View {
     @State private var selectedFilter: FeedViewContentType = .publications
     var body: some View {
         HStack {
@@ -38,9 +38,9 @@ struct FeedViewContentFilter: View {
     }
 }
 
-struct FeedViewContentFilter_Previews: PreviewProvider {
+struct FeedViewContentChooser_Previews: PreviewProvider {
     static var previews: some View {
-        FeedViewContentFilter()
+        FeedViewContentChooser()
     }
 }
 

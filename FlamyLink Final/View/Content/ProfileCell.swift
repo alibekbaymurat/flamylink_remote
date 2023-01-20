@@ -30,7 +30,7 @@ struct ProfileCell: View {
                 
                 Spacer()
                 
-                PostContextMenuView()
+                ContextMenuView()
                 
             }
             

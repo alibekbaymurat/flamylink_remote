@@ -15,7 +15,7 @@ struct PostCell: View {
                     .font(.system(size: 16, weight: .bold))
                     .lineLimit(1)
                 Spacer()
-                PostContextMenuView()
+                ContextMenuView()
             }
             .padding(.bottom)
             

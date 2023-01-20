@@ -1,5 +1,5 @@
 //
-//  PostContextMenuView.swift
+//  ContextMenuView.swift
 //  FlamyLink Final
 //
 //  Created by Алибек Баймурат on 10.12.2022.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct PostContextMenuView: View {
+struct ContextMenuView: View {
     var body: some View {
         Menu {
             Button {
@@ -44,8 +44,8 @@ struct PostContextMenuView: View {
     }
 }
 
-struct PostContextMenuView_Previews: PreviewProvider {
+struct ContextMenuView_Previews: PreviewProvider {
     static var previews: some View {
-        PostContextMenuView()
+        ContextMenuView()
     }
 }

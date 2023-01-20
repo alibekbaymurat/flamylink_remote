@@ -8,11 +8,16 @@
 import SwiftUI
 
 struct CommentView: View {
+    
     var body: some View {
-        ScrollView {
-            LazyVStack {
-                ForEach(1...10, id: \.self) { _ in
-                    PostCell()
+        VStack {
+            AdvancedSearchBarView()
+                .padding(.top)
+            ScrollView {
+                LazyVStack {
+                    ForEach(1...10, id: \.self) { _ in
+                        PostCell()
+                    }
                 }
             }
         }
