@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A23429E72981398A00DB8848 /* NotificationTypeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23429E62981398A00DB8848 /* NotificationTypeView.swift */; };
+		A23429EA2981C1A500DB8848 /* CommentTypeNotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23429E92981C1A500DB8848 /* CommentTypeNotificationView.swift */; };
+		A23429EC2981C1C900DB8848 /* RatingTypeNotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23429EB2981C1C900DB8848 /* RatingTypeNotificationView.swift */; };
+		A23429EE2981C22900DB8848 /* MentionTypeNotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23429ED2981C22900DB8848 /* MentionTypeNotificationView.swift */; };
+		A23429F02981C29700DB8848 /* DonationTypeNotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23429EF2981C29600DB8848 /* DonationTypeNotificationView.swift */; };
+		A23429F22981C2C200DB8848 /* SubscriberTypeNotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23429F12981C2C200DB8848 /* SubscriberTypeNotificationView.swift */; };
+		A23429F42981C2DE00DB8848 /* StatisticTypeNotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23429F32981C2DE00DB8848 /* StatisticTypeNotificationView.swift */; };
+		A23429F62981C2F900DB8848 /* RepostTypeNotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23429F52981C2F900DB8848 /* RepostTypeNotificationView.swift */; };
 		A2367AD4293E79B300CD1620 /* FlamyLink_FinalApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2367AD3293E79B300CD1620 /* FlamyLink_FinalApp.swift */; };
 		A2367AD6293E79B300CD1620 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2367AD5293E79B300CD1620 /* ContentView.swift */; };
 		A2367AD8293E79B500CD1620 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A2367AD7293E79B500CD1620 /* Assets.xcassets */; };
@@ -39,6 +47,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A23429E62981398A00DB8848 /* NotificationTypeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationTypeView.swift; sourceTree = "<group>"; };
+		A23429E92981C1A500DB8848 /* CommentTypeNotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentTypeNotificationView.swift; sourceTree = "<group>"; };
+		A23429EB2981C1C900DB8848 /* RatingTypeNotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingTypeNotificationView.swift; sourceTree = "<group>"; };
+		A23429ED2981C22900DB8848 /* MentionTypeNotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MentionTypeNotificationView.swift; sourceTree = "<group>"; };
+		A23429EF2981C29600DB8848 /* DonationTypeNotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonationTypeNotificationView.swift; sourceTree = "<group>"; };
+		A23429F12981C2C200DB8848 /* SubscriberTypeNotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriberTypeNotificationView.swift; sourceTree = "<group>"; };
+		A23429F32981C2DE00DB8848 /* StatisticTypeNotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticTypeNotificationView.swift; sourceTree = "<group>"; };
+		A23429F52981C2F900DB8848 /* RepostTypeNotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepostTypeNotificationView.swift; sourceTree = "<group>"; };
 		A2367AD0293E79B300CD1620 /* FlamyLink Final.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FlamyLink Final.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2367AD3293E79B300CD1620 /* FlamyLink_FinalApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlamyLink_FinalApp.swift; sourceTree = "<group>"; };
 		A2367AD5293E79B300CD1620 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -83,6 +99,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A23429E52981390900DB8848 /* TypesOfNotifications */ = {
+			isa = PBXGroup;
+			children = (
+				A23429E92981C1A500DB8848 /* CommentTypeNotificationView.swift */,
+				A23429EB2981C1C900DB8848 /* RatingTypeNotificationView.swift */,
+				A23429ED2981C22900DB8848 /* MentionTypeNotificationView.swift */,
+				A23429EF2981C29600DB8848 /* DonationTypeNotificationView.swift */,
+				A23429F12981C2C200DB8848 /* SubscriberTypeNotificationView.swift */,
+				A23429F32981C2DE00DB8848 /* StatisticTypeNotificationView.swift */,
+				A23429F52981C2F900DB8848 /* RepostTypeNotificationView.swift */,
+			);
+			path = TypesOfNotifications;
+			sourceTree = "<group>";
+		};
+		A23429E82981BA5800DB8848 /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				A23429E62981398A00DB8848 /* NotificationTypeView.swift */,
+			);
+			path = Component;
+			sourceTree = "<group>";
+		};
 		A2367AC7293E79B300CD1620 = {
 			isa = PBXGroup;
 			children = (
@@ -154,8 +192,7 @@
 		A2367AF2293E801E00CD1620 /* Content */ = {
 			isa = PBXGroup;
 			children = (
-				A2367AF0293E7FE000CD1620 /* ProfileCell.swift */,
-				A2367AF3293E802900CD1620 /* PostCell.swift */,
+				A26A4C81297B3DBD00FB3B91 /* ContentCell */,
 			);
 			path = Content;
 			sourceTree = "<group>";
@@ -188,6 +225,8 @@
 		A2367AFC2943B84F00CD1620 /* Notification */ = {
 			isa = PBXGroup;
 			children = (
+				A23429E82981BA5800DB8848 /* Component */,
+				A23429E52981390900DB8848 /* TypesOfNotifications */,
 				A2367AFD2943B86300CD1620 /* NotificationsView.swift */,
 			);
 			path = Notification;
@@ -236,6 +275,15 @@
 				A26A4C7F297B3AB000FB3B91 /* DetailedButtonView.swift */,
 			);
 			path = ContentAction;
+			sourceTree = "<group>";
+		};
+		A26A4C81297B3DBD00FB3B91 /* ContentCell */ = {
+			isa = PBXGroup;
+			children = (
+				A2367AF3293E802900CD1620 /* PostCell.swift */,
+				A2367AF0293E7FE000CD1620 /* ProfileCell.swift */,
+			);
+			path = ContentCell;
 			sourceTree = "<group>";
 		};
 		A29F2447296378E2003925B8 /* Comment */ = {
@@ -328,19 +376,27 @@
 				A29F2449296378F7003925B8 /* CommentView.swift in Sources */,
 				A2367B022943B8C100CD1620 /* SearchView.swift in Sources */,
 				A2367B1729461F0100CD1620 /* FeedViewContentChooser.swift in Sources */,
+				A23429E72981398A00DB8848 /* NotificationTypeView.swift in Sources */,
+				A23429F02981C29700DB8848 /* DonationTypeNotificationView.swift in Sources */,
 				A2367B002943B89100CD1620 /* NewPostView.swift in Sources */,
 				A26A4C7A297B3A3E00FB3B91 /* UprateButtonView.swift in Sources */,
 				A26A4C7C297B3A4F00FB3B91 /* DownrateButtonView.swift in Sources */,
 				A2367AD6293E79B300CD1620 /* ContentView.swift in Sources */,
+				A23429EA2981C1A500DB8848 /* CommentTypeNotificationView.swift in Sources */,
+				A23429EE2981C22900DB8848 /* MentionTypeNotificationView.swift in Sources */,
 				A2367B062943C98000CD1620 /* AdvancedSearchBarView.swift in Sources */,
 				A2B0B0752978938D00DCC6BC /* DetailedContentView.swift in Sources */,
 				A2367B0A2944D5F900CD1620 /* ContextMenuView.swift in Sources */,
 				A2367AEE293E7E7600CD1620 /* ProfileView.swift in Sources */,
 				A2367B112945081500CD1620 /* ContentFilterView.swift in Sources */,
+				A23429F42981C2DE00DB8848 /* StatisticTypeNotificationView.swift in Sources */,
 				A2367AD4293E79B300CD1620 /* FlamyLink_FinalApp.swift in Sources */,
 				A26A4C80297B3AB000FB3B91 /* DetailedButtonView.swift in Sources */,
+				A23429F22981C2C200DB8848 /* SubscriberTypeNotificationView.swift in Sources */,
 				A2367AFE2943B86300CD1620 /* NotificationsView.swift in Sources */,
+				A23429EC2981C1C900DB8848 /* RatingTypeNotificationView.swift in Sources */,
 				A2367B042943B8D100CD1620 /* FeedView.swift in Sources */,
+				A23429F62981C2F900DB8848 /* RepostTypeNotificationView.swift in Sources */,
 				A2367AF1293E7FE000CD1620 /* ProfileCell.swift in Sources */,
 				A2367AF82943B7F500CD1620 /* MainTabView.swift in Sources */,
 				A2367B0C2944F6FF00CD1620 /* ContentTypeFilterView.swift in Sources */,

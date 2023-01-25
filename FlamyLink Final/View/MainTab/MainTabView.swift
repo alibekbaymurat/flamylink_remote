@@ -13,7 +13,7 @@ struct MainTabView: View {
     var body: some View {
         TabView(selection: $selectedIndex) {
             FeedView()
-                .onTapGesture {
+                .onAppear {
                     self.selectedIndex = 0
                 }
                 .tabItem {
@@ -22,7 +22,7 @@ struct MainTabView: View {
                 .tag(0)
             
             SearchView()
-                .onTapGesture {
+                .onAppear {
                     self.selectedIndex = 1
                 }
                 .tabItem {
@@ -31,7 +31,7 @@ struct MainTabView: View {
                 .tag(1)
             
             NewPostView()
-                .onTapGesture {
+                .onAppear {
                     self.selectedIndex = 2
                 }
                 .tabItem {
@@ -40,7 +40,7 @@ struct MainTabView: View {
                 .tag(2)
             
             NotificationsView()
-                .onTapGesture {
+                .onAppear {
                     self.selectedIndex = 3
                 }
                 .tabItem {
@@ -49,7 +49,7 @@ struct MainTabView: View {
                 .tag(3)
             
             ProfileView()
-                .onTapGesture {
+                .onAppear {
                     self.selectedIndex = 4
                 }
                 .tabItem {

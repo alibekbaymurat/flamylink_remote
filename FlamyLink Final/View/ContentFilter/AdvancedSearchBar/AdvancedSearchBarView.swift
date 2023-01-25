@@ -22,8 +22,10 @@ struct AdvancedSearchBarView: View {
             .padding(.bottom)
             .padding(.horizontal)
             .frame(height: 45)
+            
         }
         .background(Color(.systemGray6))
+        .cornerRadius(20)
     }
 }
 
