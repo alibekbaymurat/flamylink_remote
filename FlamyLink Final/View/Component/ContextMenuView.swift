@@ -13,25 +13,31 @@ struct ContextMenuView: View {
             Button {
                 
             } label: {
-                Text("Repost")
+                Text("Сделать репост")
             }
             
             Button {
                 
             } label: {
-                Text("Send")
+                Text("Показать статистику")
             }
             
             Button {
                 
             } label: {
-                Text("Copy link")
+                Text("Поделиться")
             }
             
             Button {
                 
             } label: {
-                Text("Report")
+                Text("Копировать ссылку")
+            }
+            
+            Button {
+                
+            } label: {
+                Text("Пожаловаться")
             }
             
         } label: {

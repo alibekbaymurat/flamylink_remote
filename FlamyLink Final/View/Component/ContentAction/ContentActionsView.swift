@@ -13,19 +13,34 @@ struct ContentActionsView: View {
     static var numberOfScreen: Int = 0
     var body: some View {
         HStack {
-            //Like
-            UprateButtonView()
+            //Uprate
+            Button {
+                
+            } label: {
+                ContentActionButtonView(iconName: "arrowtriangle.up", counter: "3K")
+            }
             Spacer()
-            //Unlike
-            DownrateButtonView()
+            //Downrate
+            Button {
+                
+            } label: {
+                ContentActionButtonView(iconName: "arrowtriangle.down", counter: "10K")
+            }
             Spacer()
             //Comment
-            CommentButtonView(showCommentView: $showCommentView)
+            Button {
+                self.showCommentView.toggle()
+            } label: {
+                ContentActionButtonView(iconName: "bubble.left", counter: "100M")
+            }
             Spacer()
             //Detailed
-            DetailedButtonView(showDetailedContentView: $showDetailedContentView)
+            Button {
+                self.showDetailedContentView.toggle()
+            } label: {
+                ContentActionButtonView(iconName: "arrow.up.left.and.down.right.and.arrow.up.right.and.down.left", counter: "")
+            }
         }
-        .foregroundColor(.black)
         .padding(.top)
         .sheet(isPresented: $showCommentView) {
             NavigationStack {

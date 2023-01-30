@@ -9,25 +9,25 @@ import SwiftUI
 
 struct PostCell: View {
     var body: some View {
-        VStack(alignment: .leading, spacing: 4) {
-            HStack {
-                Text("Alibek BAIMURAT")
-                    .font(.system(size: 16, weight: .bold))
-                    .lineLimit(1)
-                Spacer()
-                ContextMenuView()
+        VStack {
+            VStack(alignment: .leading, spacing: 4) {
+                HStack {
+                    Text("Alibek BAIMURAT")
+                        .font(.system(size: 16, weight: .bold))
+                        .lineLimit(1)
+                    Spacer()
+                    ContextMenuView()
+                }
+                .padding(.bottom)
+                
+                Text("Hello World")
+                
+                ContentActionsView()
             }
-            .padding(.bottom)
+            .padding()
             
-            Text("Hello World")
-            
-            ContentActionsView()
+            Divider()
         }
-        .padding()
-        
-        Divider()
-        
-        
     }
 }
 

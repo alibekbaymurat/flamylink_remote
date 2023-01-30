@@ -15,6 +15,7 @@
 		A23429F22981C2C200DB8848 /* SubscriberTypeNotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23429F12981C2C200DB8848 /* SubscriberTypeNotificationView.swift */; };
 		A23429F42981C2DE00DB8848 /* StatisticTypeNotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23429F32981C2DE00DB8848 /* StatisticTypeNotificationView.swift */; };
 		A23429F62981C2F900DB8848 /* RepostTypeNotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23429F52981C2F900DB8848 /* RepostTypeNotificationView.swift */; };
+		A23429F92981C78500DB8848 /* ContentActionButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23429F82981C78500DB8848 /* ContentActionButtonView.swift */; };
 		A2367AD4293E79B300CD1620 /* FlamyLink_FinalApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2367AD3293E79B300CD1620 /* FlamyLink_FinalApp.swift */; };
 		A2367AD6293E79B300CD1620 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2367AD5293E79B300CD1620 /* ContentView.swift */; };
 		A2367AD8293E79B500CD1620 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A2367AD7293E79B500CD1620 /* Assets.xcassets */; };
@@ -38,10 +39,6 @@
 		A2367B112945081500CD1620 /* ContentFilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2367B102945081500CD1620 /* ContentFilterView.swift */; };
 		A2367B152945BED500CD1620 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2367B142945BED500CD1620 /* SearchBar.swift */; };
 		A2367B1729461F0100CD1620 /* FeedViewContentChooser.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2367B1629461F0100CD1620 /* FeedViewContentChooser.swift */; };
-		A26A4C7A297B3A3E00FB3B91 /* UprateButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26A4C79297B3A3E00FB3B91 /* UprateButtonView.swift */; };
-		A26A4C7C297B3A4F00FB3B91 /* DownrateButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26A4C7B297B3A4F00FB3B91 /* DownrateButtonView.swift */; };
-		A26A4C7E297B3A6B00FB3B91 /* CommentButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26A4C7D297B3A6B00FB3B91 /* CommentButtonView.swift */; };
-		A26A4C80297B3AB000FB3B91 /* DetailedButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A26A4C7F297B3AB000FB3B91 /* DetailedButtonView.swift */; };
 		A29F2449296378F7003925B8 /* CommentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29F2448296378F7003925B8 /* CommentView.swift */; };
 		A2B0B0752978938D00DCC6BC /* DetailedContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B0B0742978938D00DCC6BC /* DetailedContentView.swift */; };
 /* End PBXBuildFile section */
@@ -55,6 +52,7 @@
 		A23429F12981C2C200DB8848 /* SubscriberTypeNotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriberTypeNotificationView.swift; sourceTree = "<group>"; };
 		A23429F32981C2DE00DB8848 /* StatisticTypeNotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticTypeNotificationView.swift; sourceTree = "<group>"; };
 		A23429F52981C2F900DB8848 /* RepostTypeNotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepostTypeNotificationView.swift; sourceTree = "<group>"; };
+		A23429F82981C78500DB8848 /* ContentActionButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentActionButtonView.swift; sourceTree = "<group>"; };
 		A2367AD0293E79B300CD1620 /* FlamyLink Final.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FlamyLink Final.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2367AD3293E79B300CD1620 /* FlamyLink_FinalApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlamyLink_FinalApp.swift; sourceTree = "<group>"; };
 		A2367AD5293E79B300CD1620 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -77,10 +75,6 @@
 		A2367B102945081500CD1620 /* ContentFilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentFilterView.swift; sourceTree = "<group>"; };
 		A2367B142945BED500CD1620 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		A2367B1629461F0100CD1620 /* FeedViewContentChooser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewContentChooser.swift; sourceTree = "<group>"; };
-		A26A4C79297B3A3E00FB3B91 /* UprateButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UprateButtonView.swift; sourceTree = "<group>"; };
-		A26A4C7B297B3A4F00FB3B91 /* DownrateButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownrateButtonView.swift; sourceTree = "<group>"; };
-		A26A4C7D297B3A6B00FB3B91 /* CommentButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentButtonView.swift; sourceTree = "<group>"; };
-		A26A4C7F297B3AB000FB3B91 /* DetailedButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedButtonView.swift; sourceTree = "<group>"; };
 		A29899D929774BB900B0C8CC /* FlamyLink-Final-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "FlamyLink-Final-Info.plist"; sourceTree = SOURCE_ROOT; };
 		A29F2448296378F7003925B8 /* CommentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentView.swift; sourceTree = "<group>"; };
 		A2B0B0742978938D00DCC6BC /* DetailedContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedContentView.swift; sourceTree = "<group>"; };
@@ -119,6 +113,14 @@
 				A23429E62981398A00DB8848 /* NotificationTypeView.swift */,
 			);
 			path = Component;
+			sourceTree = "<group>";
+		};
+		A23429F72981C64F00DB8848 /* DetailedContent */ = {
+			isa = PBXGroup;
+			children = (
+				A2B0B0742978938D00DCC6BC /* DetailedContentView.swift */,
+			);
+			path = DetailedContent;
 			sourceTree = "<group>";
 		};
 		A2367AC7293E79B300CD1620 = {
@@ -161,6 +163,7 @@
 		A2367AEA293E7DD700CD1620 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				A23429F72981C64F00DB8848 /* DetailedContent */,
 				A2367AD5293E79B300CD1620 /* ContentView.swift */,
 				A2367AEB293E7DE000CD1620 /* Component */,
 				A29F2447296378E2003925B8 /* Comment */,
@@ -176,7 +179,6 @@
 			children = (
 				A26A4C78297B39C600FB3B91 /* ContentAction */,
 				A2367B092944D5F900CD1620 /* ContextMenuView.swift */,
-				A2B0B0742978938D00DCC6BC /* DetailedContentView.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -269,10 +271,7 @@
 			isa = PBXGroup;
 			children = (
 				A2367AF5293E804E00CD1620 /* ContentActionsView.swift */,
-				A26A4C79297B3A3E00FB3B91 /* UprateButtonView.swift */,
-				A26A4C7B297B3A4F00FB3B91 /* DownrateButtonView.swift */,
-				A26A4C7D297B3A6B00FB3B91 /* CommentButtonView.swift */,
-				A26A4C7F297B3AB000FB3B91 /* DetailedButtonView.swift */,
+				A23429F82981C78500DB8848 /* ContentActionButtonView.swift */,
 			);
 			path = ContentAction;
 			sourceTree = "<group>";
@@ -379,8 +378,6 @@
 				A23429E72981398A00DB8848 /* NotificationTypeView.swift in Sources */,
 				A23429F02981C29700DB8848 /* DonationTypeNotificationView.swift in Sources */,
 				A2367B002943B89100CD1620 /* NewPostView.swift in Sources */,
-				A26A4C7A297B3A3E00FB3B91 /* UprateButtonView.swift in Sources */,
-				A26A4C7C297B3A4F00FB3B91 /* DownrateButtonView.swift in Sources */,
 				A2367AD6293E79B300CD1620 /* ContentView.swift in Sources */,
 				A23429EA2981C1A500DB8848 /* CommentTypeNotificationView.swift in Sources */,
 				A23429EE2981C22900DB8848 /* MentionTypeNotificationView.swift in Sources */,
@@ -391,7 +388,7 @@
 				A2367B112945081500CD1620 /* ContentFilterView.swift in Sources */,
 				A23429F42981C2DE00DB8848 /* StatisticTypeNotificationView.swift in Sources */,
 				A2367AD4293E79B300CD1620 /* FlamyLink_FinalApp.swift in Sources */,
-				A26A4C80297B3AB000FB3B91 /* DetailedButtonView.swift in Sources */,
+				A23429F92981C78500DB8848 /* ContentActionButtonView.swift in Sources */,
 				A23429F22981C2C200DB8848 /* SubscriberTypeNotificationView.swift in Sources */,
 				A2367AFE2943B86300CD1620 /* NotificationsView.swift in Sources */,
 				A23429EC2981C1C900DB8848 /* RatingTypeNotificationView.swift in Sources */,
@@ -401,7 +398,6 @@
 				A2367AF82943B7F500CD1620 /* MainTabView.swift in Sources */,
 				A2367B0C2944F6FF00CD1620 /* ContentTypeFilterView.swift in Sources */,
 				A2367AF6293E804E00CD1620 /* ContentActionsView.swift in Sources */,
-				A26A4C7E297B3A6B00FB3B91 /* CommentButtonView.swift in Sources */,
 				A2367B152945BED500CD1620 /* SearchBar.swift in Sources */,
 				A2367AF4293E802900CD1620 /* PostCell.swift in Sources */,
 			);
