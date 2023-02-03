@@ -9,7 +9,11 @@ import SwiftUI
 
 struct SubscriberTypeNotificationView: View {
     var body: some View {
-        Text("Ваши читатели")
+        VStack(alignment: .leading) {
+            Text("Ваши читатели")
+                .bold()
+                .padding()
+        }
     }
 }
 

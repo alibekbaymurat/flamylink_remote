@@ -9,7 +9,11 @@ import SwiftUI
 
 struct DonationTypeNotificationView: View {
     var body: some View {
-        Text("Денежные пожертвования и сообщения")
+        VStack(alignment: .leading) {
+            Text("Денежные пожертвования и сообщения")
+                .bold()
+                .padding()
+        }
     }
 }
 

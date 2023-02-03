@@ -9,7 +9,13 @@ import SwiftUI
 
 struct RatingTypeNotificationView: View {
     var body: some View {
-        Text("Оценка Вашего контента другими пользователями")
+        VStack(alignment: .leading) {
+            Text("Оценка Вашего контента другими пользователями")
+                .bold()
+                .padding()
+            
+            PostCell()
+        }
     }
 }
 

@@ -16,7 +16,7 @@ struct NotificationsView: View {
                 } label: {
                     NotificationTypeView(titleText: "Комментарии",
                                          footnoteText: "Комментарии к Вашему контенту",
-                                         notificationNumber: "143")
+                                         notificationCount: "143")
                 }
                 
                 NavigationLink {
@@ -24,7 +24,7 @@ struct NotificationsView: View {
                 } label: {
                     NotificationTypeView(titleText: "Упоминания",
                                          footnoteText: "Упоминания Вашего аккаунта в контенте других пользователей",
-                                         notificationNumber: "12")
+                                         notificationCount: "12")
                 }
                 
                 NavigationLink {
@@ -32,7 +32,7 @@ struct NotificationsView: View {
                 } label: {
                     NotificationTypeView(titleText: "Оценка",
                                          footnoteText: "Оценка Вашего контента другими пользователями",
-                                         notificationNumber: "2k")
+                                         notificationCount: "2k")
                 }
                 
                 NavigationLink {
@@ -40,7 +40,7 @@ struct NotificationsView: View {
                 } label: {
                     NotificationTypeView(titleText: "Читатели",
                                          footnoteText: "Ваши читатели",
-                                         notificationNumber: "24")
+                                         notificationCount: "24")
                 }
                 
                 NavigationLink {
@@ -48,7 +48,7 @@ struct NotificationsView: View {
                 } label: {
                     NotificationTypeView(titleText: "Репосты",
                                          footnoteText: "Репосты Вашего контента",
-                                         notificationNumber: "")
+                                         notificationCount: "")
                 }
                 
                 NavigationLink {
@@ -56,7 +56,7 @@ struct NotificationsView: View {
                 } label: {
                     NotificationTypeView(titleText: "Донаты",
                                          footnoteText: "Денежные пожертвования и сообщения",
-                                         notificationNumber: "980")
+                                         notificationCount: "980")
                 }
                 
                 NavigationLink {
@@ -64,11 +64,10 @@ struct NotificationsView: View {
                 } label: {
                     NotificationTypeView(titleText: "Статистика",
                                          footnoteText: "Статистика взаимодействия с Вашим контентом",
-                                         notificationNumber: "")
+                                         notificationCount: "")
                 }
             }
         }
-        .padding()
     }
 }
 

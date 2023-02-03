@@ -9,7 +9,13 @@ import SwiftUI
 
 struct CommentTypeNotificationView: View {
     var body: some View {
-        Text("Комментарии к Вашему контенту")
+        VStack(alignment: .leading) {
+            Text("Комментарии к Вашему контенту")
+                .bold()
+                .padding()
+            
+            PostCell()
+        }
     }
 }
 

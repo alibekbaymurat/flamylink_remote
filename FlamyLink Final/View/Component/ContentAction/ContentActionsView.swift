@@ -30,6 +30,7 @@ struct ContentActionsView: View {
             //Comment
             Button {
                 self.showCommentView.toggle()
+                ContentActionsView.numberOfScreen += 1
             } label: {
                 ContentActionButtonView(iconName: "bubble.left", counter: "100M")
             }

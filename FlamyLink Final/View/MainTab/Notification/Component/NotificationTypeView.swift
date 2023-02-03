@@ -10,7 +10,7 @@ import SwiftUI
 struct NotificationTypeView: View {
     var titleText: String
     var footnoteText: String
-    var notificationNumber: String
+    var notificationCount: String
     var body: some View {
         RoundedRectangle(cornerRadius: 20)
             .stroke(Color.orange)
@@ -28,10 +28,10 @@ struct NotificationTypeView: View {
                     .foregroundColor(.black)
                     .padding(.leading)
                     Spacer()
-                    if notificationNumber != "" {
-                        Text("+\(notificationNumber)")
+                    if notificationCount != "" {
+                        Text("+\(notificationCount)")
                             .foregroundColor(.white)
-                            .padding(.horizontal)
+                            .padding(.horizontal, 8)
                             .background(Color.gray)
                             .cornerRadius(10)
                     }
@@ -41,11 +41,12 @@ struct NotificationTypeView: View {
                         .padding(.trailing)
                 }
             }
+            .padding(.horizontal)
     }
 }
 
 struct NotificationTypeView_Previews: PreviewProvider {
     static var previews: some View {
-        NotificationTypeView(titleText: "Комментарии", footnoteText: "Статистика просмотра Вашего контента и перехода по ссылке", notificationNumber: "4K")
+        NotificationTypeView(titleText: "Комментарии", footnoteText: "Статистика просмотра Вашего контента и перехода по ссылке", notificationCount: "4K")
     }
 }

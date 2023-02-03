@@ -9,7 +9,12 @@ import SwiftUI
 
 struct RepostTypeNotificationView: View {
     var body: some View {
-        Text("Репосты Вашего контента")
+        VStack(alignment: .leading) {
+            Text("Репосты Вашего контента")
+                .bold()
+                .padding()
+            PostCell()
+        }
     }
 }
 

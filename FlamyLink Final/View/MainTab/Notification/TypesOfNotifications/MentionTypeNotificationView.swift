@@ -9,7 +9,13 @@ import SwiftUI
 
 struct MentionTypeNotificationView: View {
     var body: some View {
-        Text("Упоминания Вашего аккаунта в контенте других пользователей")
+        VStack(alignment: .leading) {
+            Text("Упоминания Вашего аккаунта в контенте других пользователей")
+                .bold()
+                .padding()
+            
+            PostCell()
+        }
     }
 }
 

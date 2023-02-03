@@ -9,7 +9,11 @@ import SwiftUI
 
 struct StatisticTypeNotificationView: View {
     var body: some View {
-        Text("Статистика взаимодействия с Вашим контентом")
+        VStack(alignment: .leading) {
+            Text("Статистика взаимодействия с Вашим контентом")
+                .bold()
+                .padding()
+        }
     }
 }
 
