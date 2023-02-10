@@ -12,7 +12,7 @@ struct ProfileCell: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 4) {
             HStack {
-                Text("Alibek BAIMURAT")
+                Text("Алибек БАЙМУРАТ")
                     .font(.system(size: 18, weight: .bold))
                     .frame(width: UIScreen.main.bounds.width / 2, alignment: .leading)
                     .lineLimit(1)
@@ -20,7 +20,7 @@ struct ProfileCell: View {
                 Button(action: {
                     
                 }, label: {
-                    Text("Subscribe")
+                    Text("Читать")
                         .font(.system(size: 18))
                         .frame(width: 100)
                         .background(Color.orange)
@@ -42,7 +42,7 @@ struct ProfileCell: View {
                 
                 Text("10k")
                     .font(.system(.body, weight: .bold))
-                Text("subscribers")
+                Text("читателей")
             }
             .padding(.bottom)
             

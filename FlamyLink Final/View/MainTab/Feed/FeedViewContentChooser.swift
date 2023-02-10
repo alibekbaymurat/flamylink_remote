@@ -50,8 +50,8 @@ enum FeedViewContentType: Int, CaseIterable {
     
     var type: String {
         switch self {
-        case .publications: return "Publications"
-        case .recommendations: return "Recommendations"
+        case .publications: return "Подписки"
+        case .recommendations: return "Рекомендации"
         }
     }
 }

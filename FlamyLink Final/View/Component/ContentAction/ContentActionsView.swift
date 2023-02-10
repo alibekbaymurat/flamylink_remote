@@ -58,7 +58,7 @@ struct ContentActionsView: View {
                             Button {
                                 // при нажатии нужно чтоб переходил на первый комент
                             } label: {
-                                Text("Show 1st comment")
+                                Text("Показать первый комментарий")
                             }
                             
                         }

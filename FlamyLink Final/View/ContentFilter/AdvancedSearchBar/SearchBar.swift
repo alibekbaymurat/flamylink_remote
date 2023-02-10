@@ -10,7 +10,7 @@ import SwiftUI
 struct SearchBar: View {
     @Binding var text: String
     var body: some View {
-        TextField("Search...", text: $text)
+        TextField("Что ищете?", text: $text)
             .textInputAutocapitalization(.never)
             .autocorrectionDisabled()
             .textFieldStyle(RoundedBorderTextFieldStyle())

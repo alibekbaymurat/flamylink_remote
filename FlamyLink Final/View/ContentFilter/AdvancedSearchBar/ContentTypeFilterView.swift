@@ -33,13 +33,15 @@ enum ContentType: Int, CaseIterable {
     case hashtag
     case comment
     case profile
+    case repost
     
     var type: String {
         switch self {
-        case .post: return "/posts"
-        case .hashtag: return "/hashtags"
-        case .comment: return "/comments"
-        case .profile: return "/profiles"
+        case .post: return "/посты"
+        case .hashtag: return "/хештеги"
+        case .comment: return "/комментарии"
+        case .profile: return "/профили"
+        case .repost: return "/репосты"
         }
     }
 }

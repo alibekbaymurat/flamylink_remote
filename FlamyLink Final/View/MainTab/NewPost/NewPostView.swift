@@ -16,7 +16,7 @@ struct NewPostView: View {
                 Button {
                     
                 } label: {
-                    Text("Post")
+                    Text("Выложить")
                         .bold()
                         .padding(.horizontal)
                         .padding(.vertical, 8)

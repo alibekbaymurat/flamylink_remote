@@ -35,7 +35,8 @@ struct MainTabView: View {
                     self.selectedIndex = 2
                 }
                 .tabItem {
-                    Image(systemName: "plus")
+                    Image(systemName: "plus.circle")
+                        
                 }
                 .tag(2)
             
@@ -57,5 +58,12 @@ struct MainTabView: View {
                 }
                 .tag(4)
         }
+        .accentColor(.orange)
+    }
+}
+
+struct MainTab_Previews: PreviewProvider {
+    static var previews: some View {
+        MainTabView()
     }
 }

@@ -9,37 +9,37 @@ import SwiftUI
 
 struct ContentFilterView: View {
     @Environment(\.dismiss) var dissmis
-    @State private var selectedCountry = "Any all"
+    @State private var selectedCountry = "Все страны"
     @State private var selectedRating: RatingFilter = .anyAll
     @State private var selectedDateOfAddition: DateOfAdditionFilter = .anyAll
-    let countries = ["Any all", "Kazakhstan", "Uzbekistan", "Ukraine", "Belgium", "Argentina", "Qatar", "France", "USA", "Germany", "Australia", "Egypt", "Croatia", "Indonesia", "China", "Japan", "North Korea", "South Korea", "Russia", "Armenia", "Kyrgyzstan", "Poland", "England", "New Zealand", "Brazil", "Austria", "Monaco", "India", "Pakistan", "Afganistan", "Spain", "Portugal"]
+    let countries = ["Все страны", "Казахстан", "Австрия", "Англия", "Австралия", "Аргентина", "Армения", "Афганистан", "Бельгия", "Бразилия", "Германия", "Египет", "Индия", "Индонезия", "Испания", "Катар", "Китай", "Кыргызстан", "Новая Зеландия", "Пакистан", "Польша", "Россия", "Северная Корея", "США", "Узбекистан", "Франция", "Хорватия", "Южная Корея", "Япония"]
     
     var body: some View {
         Form {
-            Section("Sort by") {
-                Picker("Rating", selection: $selectedRating) {
+            Section("Сортировать по: ") {
+                Picker("Оценка", selection: $selectedRating) {
                     ForEach(RatingFilter.allCases, id: \.self) { item in
                         Text(item.type)
                     }
                 }
-                Picker("Date of addition", selection: $selectedDateOfAddition) {
+                Picker("Дата публикации", selection: $selectedDateOfAddition) {
                     ForEach(DateOfAdditionFilter.allCases, id: \.self) { item in
                         Text(item.type)
                     }
                 }
             }
-            Section("Filter") {
-                Picker("Country", selection: $selectedCountry) {
+            Section("Фильтр") {
+                Picker("Страна", selection: $selectedCountry) {
                     ForEach(countries, id: \.self) {
                         Text($0)
                     }
                 }
             }
-            Button("Apply") {
+            Button("Применить") {
                 // нужно передать значения фильтра к той вью откуда открылся ContentFilterView
                 dissmis()
             }
-            Button("Cancel") {
+            Button("Отменить") {
                 dissmis()
             }
         }
@@ -61,7 +61,7 @@ enum RatingFilter: Int, CaseIterable {
         switch self {
         case .mostLiked: return "Most liked"
         case .mostUnderrated: return "Most underrated"
-        case .anyAll: return "Any all"
+        case .anyAll: return "Любые"
         }
     }
 }
@@ -75,7 +75,7 @@ enum DateOfAdditionFilter: Int, CaseIterable {
         switch self {
         case .olderContent: return "Older content"
         case .newerContent: return "Newer content"
-        case .anyAll: return "Any all"
+        case .anyAll: return "Любые"
         }
     }
 }

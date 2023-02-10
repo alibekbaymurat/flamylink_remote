@@ -12,7 +12,7 @@ struct PostCell: View {
         VStack {
             VStack(alignment: .leading, spacing: 4) {
                 HStack {
-                    Text("Alibek BAIMURAT")
+                    Text("Алибек БАЙМУРАТ")
                         .font(.system(size: 16, weight: .bold))
                         .lineLimit(1)
                     Spacer()
@@ -20,7 +20,7 @@ struct PostCell: View {
                 }
                 .padding(.bottom)
                 
-                Text("Hello World")
+                Text("Всем привет")
                 
                 ContentActionsView()
             }
