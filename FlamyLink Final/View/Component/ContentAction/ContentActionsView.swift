@@ -20,6 +20,7 @@ struct ContentActionsView: View {
                 ContentActionButtonView(iconName: "arrowtriangle.up", counter: "3K")
             }
             Spacer()
+            
             //Downrate
             Button {
                 
@@ -27,6 +28,7 @@ struct ContentActionsView: View {
                 ContentActionButtonView(iconName: "arrowtriangle.down", counter: "10K")
             }
             Spacer()
+            
             //Comment
             Button {
                 self.showCommentView.toggle()
@@ -35,6 +37,7 @@ struct ContentActionsView: View {
                 ContentActionButtonView(iconName: "bubble.left", counter: "100M")
             }
             Spacer()
+            
             //Detailed
             Button {
                 self.showDetailedContentView.toggle()
@@ -44,26 +47,7 @@ struct ContentActionsView: View {
         }
         .padding(.top)
         .sheet(isPresented: $showCommentView) {
-            NavigationStack {
-                CommentView()
-                    .toolbar {
-                        ToolbarItemGroup(placement: .navigationBarLeading) {
-                            Button {
-                                ContentActionsView.numberOfScreen -= 1
-                                showCommentView = false
-                            } label: {
-                                Text("Back")
-                            }
-                            Text("\(ContentActionsView.numberOfScreen)")
-                            Button {
-                                // при нажатии нужно чтоб переходил на первый комент
-                            } label: {
-                                Text("Показать первый комментарий")
-                            }
-                            
-                        }
-                    }
-            }
+            showSecondaryCommentView()
         }
         .sheet(isPresented: $showDetailedContentView) {
             NavigationStack {
@@ -78,6 +62,54 @@ struct ContentActionsView: View {
                         }
                     }
             }
+        }
+    }
+}
+
+extension ContentActionsView {
+    struct ContentActionButtonView: View {
+        var iconName: String
+        var counter: String
+        var body: some View {
+            if iconName == "arrow.up.left.and.down.right.and.arrow.up.right.and.down.left" {
+                Image(systemName: iconName)
+                    .font(.system(size: 16))
+                    .foregroundColor(.black)
+            } else {
+                HStack {
+                    Image(systemName: iconName)
+                        .font(.system(size: 20))
+                        .frame(width: 20, height: 20)
+                    
+                    Text(counter)
+                }
+                .foregroundColor(.black)
+            }
+        }
+    }
+}
+
+extension ContentActionsView {
+    private func showSecondaryCommentView() -> some View {
+        NavigationStack {
+            CommentView()
+                .toolbar {
+                    ToolbarItemGroup(placement: .navigationBarLeading) {
+                        Button {
+                            ContentActionsView.numberOfScreen -= 1
+                            showCommentView = false
+                        } label: {
+                            Text("Back")
+                        }
+                        Text("\(ContentActionsView.numberOfScreen)")
+                        Button {
+                            // при нажатии нужно чтоб переходил на первый комент
+                        } label: {
+                            Text("Показать первый комментарий")
+                        }
+                        
+                    }
+                }
         }
     }
 }

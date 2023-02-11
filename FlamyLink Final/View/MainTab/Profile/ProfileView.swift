@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ProfileView: View {
     private var showSearchBarOnTop: Bool {
-        if offset >= 254.00 {
+        if offset > 254.00 {
             return true
         }
         return false

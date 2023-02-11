@@ -8,61 +8,69 @@
 import SwiftUI
 
 struct MainTabView: View {
-    @State private var selectedIndex = 0
-    
+    @State private var selectedTabButton: MainTabButton = .newsFeed
     var body: some View {
-        TabView(selection: $selectedIndex) {
-            FeedView()
-                .onAppear {
-                    self.selectedIndex = 0
+        VStack {
+            switch selectedTabButton {
+            case .newsFeed:
+                FeedView()
+            case .search:
+                SearchView()
+            case .addPost:
+                NewPostView()
+            case .notification:
+                NotificationsView()
+            case .profile:
+                ProfileView()
+            }
+            HStack(alignment: .center, spacing: 50) {
+                ForEach(MainTabButton.allCases, id: \.self) { item in
+                    VStack {
+                        tabButtonView(image: item.type)
+                            .fontWeight(selectedTabButton == item ? .semibold : .regular)
+                            .foregroundColor(selectedTabButton == item ? .black : .gray)
+                    }
+                    .onTapGesture {
+                        self.selectedTabButton = item
+                    }
                 }
-                .tabItem {
-                    Image(systemName: "newspaper")
-                }
-                .tag(0)
-            
-            SearchView()
-                .onAppear {
-                    self.selectedIndex = 1
-                }
-                .tabItem {
-                    Image(systemName: "magnifyingglass")
-                }
-                .tag(1)
-            
-            NewPostView()
-                .onAppear {
-                    self.selectedIndex = 2
-                }
-                .tabItem {
-                    Image(systemName: "plus.circle")
-                        
-                }
-                .tag(2)
-            
-            NotificationsView()
-                .onAppear {
-                    self.selectedIndex = 3
-                }
-                .tabItem {
-                    Image(systemName: "bell")
-                }
-                .tag(3)
-            
-            ProfileView()
-                .onAppear {
-                    self.selectedIndex = 4
-                }
-                .tabItem {
-                    Image(systemName: "person")
-                }
-                .tag(4)
+            }
+            .frame(width: UIScreen.main.bounds.width, height: 50)
+            .edgesIgnoringSafeArea(.bottom)
+            .background(Color(.systemGray6))
         }
-        .accentColor(.orange)
     }
 }
 
-struct MainTab_Previews: PreviewProvider {
+extension MainTabView {
+    private func tabButtonView(image: String) -> some View {
+        Image(systemName: image)
+            .resizable()
+            .scaledToFit()
+            .frame(width: 24, height: 24)
+            .tint(Color(.systemGray))
+    }
+}
+
+enum MainTabButton: Int, CaseIterable {
+    case newsFeed
+    case search
+    case addPost
+    case notification
+    case profile
+    
+    var type: String {
+        switch self {
+        case .newsFeed: return "house"
+        case .search: return "magnifyingglass"
+        case .addPost: return "plus"
+        case .notification: return "bell"
+        case .profile: return "person"
+        }
+    }
+}
+
+struct MainTabView_Previews: PreviewProvider {
     static var previews: some View {
         MainTabView()
     }

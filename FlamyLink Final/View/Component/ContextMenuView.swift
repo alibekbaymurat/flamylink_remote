@@ -10,35 +10,20 @@ import SwiftUI
 struct ContextMenuView: View {
     var body: some View {
         Menu {
-            Button {
+            //
+            contextMenuButton(description: "Сделать репост")
                 
-            } label: {
-                Text("Сделать репост")
-            }
+            //
+            contextMenuButton(description: "Показать статистику")
             
-            Button {
-                
-            } label: {
-                Text("Показать статистику")
-            }
+            //
+            contextMenuButton(description: "Поделиться")
             
-            Button {
-                
-            } label: {
-                Text("Поделиться")
-            }
+            //
+            contextMenuButton(description: "Копировать ссылку")
             
-            Button {
-                
-            } label: {
-                Text("Копировать ссылку")
-            }
-            
-            Button {
-                
-            } label: {
-                Text("Пожаловаться")
-            }
+            //
+            contextMenuButton(description: "Пожаловаться")
             
         } label: {
             Image(systemName: "ellipsis")
@@ -53,5 +38,15 @@ struct ContextMenuView: View {
 struct ContextMenuView_Previews: PreviewProvider {
     static var previews: some View {
         ContextMenuView()
+    }
+}
+
+extension ContextMenuView {
+    private func contextMenuButton(description: String) -> some View {
+        Button {
+            
+        } label: {
+            Text(description)
+        }
     }
 }
