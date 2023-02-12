@@ -9,35 +9,48 @@ import SwiftUI
 
 struct MainTabView: View {
     @State private var selectedTabButton: MainTabButton = .newsFeed
+    @State private var showNewPostView: Bool = false
     var body: some View {
-        VStack {
-            switch selectedTabButton {
-            case .newsFeed:
-                FeedView()
-            case .search:
-                SearchView()
-            case .addPost:
-                NewPostView()
-            case .notification:
-                NotificationsView()
-            case .profile:
-                ProfileView()
-            }
-            HStack(alignment: .center, spacing: 50) {
-                ForEach(MainTabButton.allCases, id: \.self) { item in
-                    VStack {
-                        tabButtonView(image: item.type)
-                            .fontWeight(selectedTabButton == item ? .semibold : .regular)
-                            .foregroundColor(selectedTabButton == item ? .black : .gray)
+        ZStack {
+            if showNewPostView {
+                NewPostView(showNewPostView: $showNewPostView)
+            } else {
+                VStack {
+                    switch selectedTabButton {
+                    case .newsFeed:
+                        FeedView()
+                    case .search:
+                        SearchView()
+                    case .addPost:
+                        NewPostView(showNewPostView: $showNewPostView)
+                    case .notification:
+                        NotificationsView()
+                    case .profile:
+                        ProfileView()
                     }
-                    .onTapGesture {
-                        self.selectedTabButton = item
+                    HStack(alignment: .center, spacing: 50) {
+                        ForEach(MainTabButton.allCases, id: \.self) { item in
+                            VStack {
+                                tabButtonView(image: item.type)
+                                    .fontWeight(selectedTabButton == item ? .semibold : .regular)
+                                    .foregroundColor(selectedTabButton == item ? .black : (MainTabButton.addPost == item ? .orange : .gray))
+                                    .frame(width: MainTabButton.addPost == item ? 32 : 24, height: MainTabButton.addPost == item ? 32 : 24)
+                                
+                            }
+                            .onTapGesture {
+                                if item == MainTabButton.addPost {
+                                    showNewPostView.toggle()
+                                } else {
+                                    self.selectedTabButton = item
+                                }
+                            }
+                        }
                     }
+                    .frame(width: UIScreen.main.bounds.width, height: 50)
+                    .edgesIgnoringSafeArea(.bottom)
+                    .background(Color(.systemGray6))
                 }
             }
-            .frame(width: UIScreen.main.bounds.width, height: 50)
-            .edgesIgnoringSafeArea(.bottom)
-            .background(Color(.systemGray6))
         }
     }
 }
@@ -47,7 +60,6 @@ extension MainTabView {
         Image(systemName: image)
             .resizable()
             .scaledToFit()
-            .frame(width: 24, height: 24)
             .tint(Color(.systemGray))
     }
 }
@@ -63,7 +75,7 @@ enum MainTabButton: Int, CaseIterable {
         switch self {
         case .newsFeed: return "house"
         case .search: return "magnifyingglass"
-        case .addPost: return "plus"
+        case .addPost: return "plus.circle"
         case .notification: return "bell"
         case .profile: return "person"
         }
