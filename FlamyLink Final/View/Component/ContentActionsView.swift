@@ -10,42 +10,39 @@ import SwiftUI
 struct ContentActionsView: View {
     @State private var showCommentView: Bool = false
     @State private var showDetailedContentView = false
-    static var numberOfScreen: Int = 0
+    static var counterOfScreen: Int = 0
     var body: some View {
         HStack {
             //Uprate
-            Button {
-                
-            } label: {
-                ContentActionButtonView(iconName: "arrowtriangle.up", counter: "3K")
+            HStack {
+                ContentActionButtonView(iconName: "arrowtriangle.up")
+                Text("3K")
             }
+            
             Spacer()
             
             //Downrate
-            Button {
-                
-            } label: {
-                ContentActionButtonView(iconName: "arrowtriangle.down", counter: "10K")
+            HStack {
+                ContentActionButtonView(iconName: "arrowtriangle.down")
+                Text("10K")
             }
+            
             Spacer()
             
             //Comment
-            Button {
-                self.showCommentView.toggle()
-                ContentActionsView.numberOfScreen += 1
-            } label: {
-                ContentActionButtonView(iconName: "bubble.left", counter: "100M")
+            HStack {
+                ContentActionButtonView(iconName: "bubble.left")
+                Text("100M")
             }
+            
+            
             Spacer()
             
             //Detailed
-            Button {
-                self.showDetailedContentView.toggle()
-            } label: {
-                ContentActionButtonView(iconName: "arrow.up.left.and.down.right.and.arrow.up.right.and.down.left", counter: "")
-            }
+            ContentActionButtonView(iconName: "arrow.up.left.and.arrow.down.right")
         }
         .padding(.top)
+        .foregroundColor(.black)
         .sheet(isPresented: $showCommentView) {
             showSecondaryCommentView()
         }
@@ -69,22 +66,11 @@ struct ContentActionsView: View {
 extension ContentActionsView {
     struct ContentActionButtonView: View {
         var iconName: String
-        var counter: String
         var body: some View {
-            if iconName == "arrow.up.left.and.down.right.and.arrow.up.right.and.down.left" {
-                Image(systemName: iconName)
-                    .font(.system(size: 16))
-                    .foregroundColor(.black)
-            } else {
-                HStack {
-                    Image(systemName: iconName)
-                        .font(.system(size: 20))
-                        .frame(width: 20, height: 20)
-                    
-                    Text(counter)
-                }
-                .foregroundColor(.black)
-            }
+            Image(systemName: iconName)
+                .resizable()
+                .scaledToFit()
+                .frame(width: 18, height: 18)
         }
     }
 }
@@ -96,12 +82,12 @@ extension ContentActionsView {
                 .toolbar {
                     ToolbarItemGroup(placement: .navigationBarLeading) {
                         Button {
-                            ContentActionsView.numberOfScreen -= 1
+                            ContentActionsView.counterOfScreen -= 1
                             showCommentView = false
                         } label: {
                             Text("Back")
                         }
-                        Text("\(ContentActionsView.numberOfScreen)")
+                        Text("\(ContentActionsView.counterOfScreen)")
                         Button {
                             // при нажатии нужно чтоб переходил на первый комент
                         } label: {
