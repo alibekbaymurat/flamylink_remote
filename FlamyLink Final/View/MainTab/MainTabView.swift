@@ -10,6 +10,7 @@ import SwiftUI
 struct MainTabView: View {
     @State private var selectedTabButton: MainTabButton = .newsFeed
     @State private var showNewPostView: Bool = false
+    @State private var showDetailedContentView: Bool = false
     var body: some View {
         ZStack {
             if showNewPostView {
@@ -51,6 +52,7 @@ struct MainTabView: View {
                     .background(Color(.systemGray6))
                 }
             }
+            
         }
     }
 }

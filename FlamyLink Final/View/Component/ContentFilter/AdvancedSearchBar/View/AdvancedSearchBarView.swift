@@ -6,14 +6,22 @@
 //
 
 import SwiftUI
+import Combine
+
+class AdvancedSearchBarViewStateSaver: ObservableObject {
+    @Published var text = ""
+    @Published var filterType: ContentType = .post
+}
 
 struct AdvancedSearchBarView: View {
-    @State private var text: String = ""
+    @StateObject var searchBarState = AdvancedSearchBarViewStateSaver()
+    
     var body: some View {
         VStack(spacing: 0) {
-            SearchBar(text: $text)
+            SearchBar(text: $searchBarState.text)
+            
             HStack {
-                ContentTypeFilterView()
+                ContentTypeFilterView(searchBarState: searchBarState)
                 
                 Spacer()
                 
@@ -21,8 +29,7 @@ struct AdvancedSearchBarView: View {
             }
             .padding(.bottom)
             .padding(.horizontal)
-            .frame(height: 45)
-            
+            .frame(height: 40)
         }
         .background(Color(.systemGray6))
         .cornerRadius(20)

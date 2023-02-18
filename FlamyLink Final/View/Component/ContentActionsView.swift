@@ -46,20 +46,20 @@ struct ContentActionsView: View {
         .sheet(isPresented: $showCommentView) {
             showSecondaryCommentView()
         }
-        .sheet(isPresented: $showDetailedContentView) {
-            NavigationStack {
-                DetailedContentView()
-                    .toolbar {
-                        ToolbarItemGroup(placement: .navigationBarLeading) {
-                            Button {
-                                showDetailedContentView.toggle()
-                            } label: {
-                                Text("Back")
-                            }
-                        }
-                    }
-            }
-        }
+//        .sheet(isPresented: $showDetailedContentView) {
+//            NavigationStack {
+//                DetailedContentView(showDetailedContentView: $showDetailedContentView)
+//                    .toolbar {
+//                        ToolbarItemGroup(placement: .navigationBarLeading) {
+//                            Button {
+//                                showDetailedContentView.toggle()
+//                            } label: {
+//                                Text("Back")
+//                            }
+//                        }
+//                    }
+//            }
+//        }
     }
 }
 

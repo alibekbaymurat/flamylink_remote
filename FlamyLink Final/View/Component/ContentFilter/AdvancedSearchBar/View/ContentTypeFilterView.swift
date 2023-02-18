@@ -8,20 +8,19 @@
 import SwiftUI
 
 struct ContentTypeFilterView: View {
-    
-    @State private var selectedContentType: ContentType = .post
+    @StateObject var searchBarState = AdvancedSearchBarViewStateSaver()
     
     var body: some View {
         Menu {
             ForEach(ContentType.allCases, id: \.self) { item in
                 Button {
-                    self.selectedContentType = item
+                    searchBarState.filterType = item
                 } label: {
                     Text(item.type)
                 }
             }
         } label: {
-            Text(selectedContentType.type)
+            Text(searchBarState.filterType.type)
                 .font(.system(size: 20))
                 .foregroundColor(.orange)
         }

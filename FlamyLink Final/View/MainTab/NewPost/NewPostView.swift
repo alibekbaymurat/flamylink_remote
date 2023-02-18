@@ -35,7 +35,6 @@ struct NewPostView: View {
                         .scaledToFit()
                         .frame(width: 20, height: 20)
                         .foregroundColor(Color(.systemGray2))
-                        
                 }
             }
             .padding()

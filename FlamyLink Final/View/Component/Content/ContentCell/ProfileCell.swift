@@ -51,7 +51,7 @@ struct ProfileCell: View {
                 .lineLimit(5)
             
             
-            ContentActionsView()
+            DetailedShowButtonView()
         }
         .padding()
         

@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct ProfileView: View {
+    @StateObject var searchBarState = AdvancedSearchBarViewStateSaver()
+    
     @State private var showDivider: Bool = false
     @State private var offset = CGFloat.zero
     
@@ -16,7 +18,7 @@ struct ProfileView: View {
             NavigationBarView()
             
             if offset < 0 {
-                AdvancedSearchBarView()
+                AdvancedSearchBarView(searchBarState: searchBarState)
             }
             
             ScrollView {
@@ -32,7 +34,7 @@ struct ProfileView: View {
                     .frame(width: 0, height: 0)
                     
                     if offset >= 0 {
-                        AdvancedSearchBarView()
+                        AdvancedSearchBarView(searchBarState: searchBarState)
                     }
                     
                     ForEach(1...5, id: \.self) { _ in

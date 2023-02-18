@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct PostCell: View {
+    @State private var showDetailedContentView = false
     var body: some View {
         VStack {
             VStack(alignment: .leading, spacing: 4) {
@@ -22,7 +23,7 @@ struct PostCell: View {
                 
                 Text("Всем привет")
                 
-                ContentActionsView()
+                DetailedShowButtonView()
             }
             .padding()
             
@@ -30,6 +31,7 @@ struct PostCell: View {
         }
     }
 }
+
 
 struct PostCell_Previews: PreviewProvider {
     static var previews: some View {

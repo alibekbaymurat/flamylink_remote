@@ -40,6 +40,7 @@
 		A2367B1729461F0100CD1620 /* FeedViewContentChooser.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2367B1629461F0100CD1620 /* FeedViewContentChooser.swift */; };
 		A29F2449296378F7003925B8 /* CommentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29F2448296378F7003925B8 /* CommentView.swift */; };
 		A2B0B0752978938D00DCC6BC /* DetailedContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B0B0742978938D00DCC6BC /* DetailedContentView.swift */; };
+		A2FDC16629A01464003A8DDC /* DetailedShowButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2FDC16529A01464003A8DDC /* DetailedShowButtonView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -76,6 +77,7 @@
 		A29899D929774BB900B0C8CC /* FlamyLink-Final-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "FlamyLink-Final-Info.plist"; sourceTree = SOURCE_ROOT; };
 		A29F2448296378F7003925B8 /* CommentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentView.swift; sourceTree = "<group>"; };
 		A2B0B0742978938D00DCC6BC /* DetailedContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedContentView.swift; sourceTree = "<group>"; };
+		A2FDC16529A01464003A8DDC /* DetailedShowButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedShowButtonView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +129,7 @@
 			isa = PBXGroup;
 			children = (
 				A2B0B0742978938D00DCC6BC /* DetailedContentView.swift */,
+				A2FDC16529A01464003A8DDC /* DetailedShowButtonView.swift */,
 			);
 			path = DetailedContent;
 			sourceTree = "<group>";
@@ -385,6 +388,7 @@
 				A2367B112945081500CD1620 /* ContentFilterView.swift in Sources */,
 				A23429F42981C2DE00DB8848 /* StatisticTypeNotificationView.swift in Sources */,
 				A2367AD4293E79B300CD1620 /* FlamyLink_FinalApp.swift in Sources */,
+				A2FDC16629A01464003A8DDC /* DetailedShowButtonView.swift in Sources */,
 				A23429F22981C2C200DB8848 /* SubscriberTypeNotificationView.swift in Sources */,
 				A2367AFE2943B86300CD1620 /* NotificationsView.swift in Sources */,
 				A23429EC2981C1C900DB8848 /* RatingTypeNotificationView.swift in Sources */,
