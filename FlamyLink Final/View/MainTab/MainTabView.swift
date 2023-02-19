@@ -31,20 +31,18 @@ struct MainTabView: View {
                     }
                     HStack(alignment: .center, spacing: 50) {
                         ForEach(MainTabButton.allCases, id: \.self) { item in
-                            VStack {
-                                tabButtonView(image: item.type)
-                                    .fontWeight(selectedTabButton == item ? .semibold : .regular)
-                                    .foregroundColor(selectedTabButton == item ? .black : (MainTabButton.addPost == item ? .orange : .gray))
-                                    .frame(width: MainTabButton.addPost == item ? 32 : 24, height: MainTabButton.addPost == item ? 32 : 24)
-                                
-                            }
-                            .onTapGesture {
-                                if item == MainTabButton.addPost {
-                                    showNewPostView.toggle()
-                                } else {
-                                    self.selectedTabButton = item
+                            
+                            tabButtonView(image: item.type)
+                                .fontWeight(selectedTabButton == item ? .semibold : .regular)
+                                .foregroundColor(selectedTabButton == item ? .black : (MainTabButton.addPost == item ? .orange : .gray))
+                                .frame(width: MainTabButton.addPost == item ? 32 : 24, height: MainTabButton.addPost == item ? 32 : 24)
+                                .onTapGesture {
+                                    if item == MainTabButton.addPost {
+                                        showNewPostView.toggle()
+                                    } else {
+                                        self.selectedTabButton = item
+                                    }
                                 }
-                            }
                         }
                     }
                     .frame(width: UIScreen.main.bounds.width, height: 50)

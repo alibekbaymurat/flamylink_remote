@@ -31,7 +31,6 @@ struct ProfileCell: View {
                 Spacer()
                 
                 ContextMenuView()
-                
             }
             
             HStack {
@@ -50,8 +49,11 @@ struct ProfileCell: View {
                 .font(.body)
                 .lineLimit(5)
             
-            
-            DetailedShowButtonView()
+            NavigationLink {
+                DetailedContentView()
+            } label: {
+                Text("Показать полностью")
+            }
         }
         .padding()
         

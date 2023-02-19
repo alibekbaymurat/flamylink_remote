@@ -9,26 +9,32 @@ import SwiftUI
 
 struct PostCell: View {
     @State private var showDetailedContentView = false
+    
     var body: some View {
-        VStack {
-            VStack(alignment: .leading, spacing: 4) {
-                HStack {
-                    Text("Алибек БАЙМУРАТ")
-                        .font(.system(size: 16, weight: .bold))
-                        .lineLimit(1)
-                    Spacer()
-                    ContextMenuView()
-                }
-                .padding(.bottom)
+        VStack(alignment: .leading, spacing: 4) {
+            HStack {
+                Text("Алибек БАЙМУРАТ")
+                    .font(.system(size: 16, weight: .bold))
+                    .lineLimit(1)
                 
-                Text("Всем привет")
+                Spacer()
                 
-                DetailedShowButtonView()
+                ContextMenuView()
             }
-            .padding()
+            .padding(.bottom)
+            
+            Text("Всем привет")
+            
+            NavigationLink {
+                DetailedContentView()
+            } label: {
+                Text("Показать полностью")
+            }
             
             Divider()
         }
+        .padding()
+        
     }
 }
 

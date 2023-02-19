@@ -9,19 +9,7 @@ import SwiftUI
 
 struct DetailedContentView: View {
     var body: some View {
-        VStack {
-            Button {
-                
-            } label: {
-                Image(systemName: "xmark")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 20, height: 20)
-                    .foregroundColor(Color(.systemGray2))
-            }
-            
-            Text("Detailed view")
-        }
+        Text("Detailed view")
     }
 }
 
