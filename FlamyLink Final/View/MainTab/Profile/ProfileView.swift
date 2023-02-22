@@ -30,12 +30,14 @@ struct ProfileView: View {
                     ProfileCell(showDivider: $showDivider)
                     
                     LazyVStack {
-                        AdvancedSearchBarView(searchBarState: searchBarState).background(GeometryReader { geo in
-                            let offset = -geo.frame(in: .named("scrollSpace")).minY
-                            Color.clear
-                                .preference(key: ScrollViewOffsetPreferenceKey.self,
-                                            value: offset)
-                        })
+                        AdvancedSearchBarView(searchBarState: searchBarState)
+                            .background(GeometryReader { geo in
+                                let offset = -geo.frame(in: .named("scrollSpace")).minY
+                                Color.clear
+                                    .preference(key: ScrollViewOffsetPreferenceKey.self,
+                                                value: offset)
+                            })
+                            
                         
                         ForEach(1...10, id: \.self) { _ in
                             PostCell()

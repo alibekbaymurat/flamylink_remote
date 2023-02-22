@@ -9,8 +9,8 @@ import SwiftUI
 import Combine
 
 class AdvancedSearchBarViewStateSaver: ObservableObject {
-    @Published var text = ""
-    @Published var filterType: ContentType = .post
+    @Published var typedText = ""
+    @Published var selectedFilterType: ContentType = .post
 }
 
 struct AdvancedSearchBarView: View {
@@ -18,7 +18,7 @@ struct AdvancedSearchBarView: View {
     
     var body: some View {
         VStack(spacing: 0) {
-            SearchBar(text: $searchBarState.text)
+            SearchBar(text: $searchBarState.typedText)
             
             HStack {
                 ContentTypeFilterView(searchBarState: searchBarState)
@@ -31,9 +31,7 @@ struct AdvancedSearchBarView: View {
             .padding(.horizontal)
             .frame(height: 40)
         }
-        .background(Color(.systemGray6))
-        .cornerRadius(20)
-    }
+        .background(Color(.systemGray6))    }
 }
 
 struct AdvancedSearchBarView_Previews: PreviewProvider {

@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ContentFilterButtonView: View {
+    @StateObject var contentFilterState = ContentFilterViewStateSaver()
     @State private var showSheet: Bool = false
     var body: some View {
         Button {
@@ -17,10 +18,10 @@ struct ContentFilterButtonView: View {
                 .resizable()
                 .scaledToFit()
                 .font(.system(size: 30))
-                .foregroundColor(.orange)
+                .foregroundColor(Color("customOrange"))
         }
         .sheet(isPresented: $showSheet) {
-            ContentFilterView()
+            ContentFilterView(contentFilterState: contentFilterState)
         }
 
     }

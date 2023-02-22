@@ -23,7 +23,7 @@ struct NotificationsView: View {
                     MentionTypeNotificationView()
                 } label: {
                     NotificationTypeView(titleText: "Упоминания",
-                                         footnoteText: "Упоминания Вашего аккаунта в контенте других пользователей",
+                                         footnoteText: "Упоминания Вашего аккаунта в контенте пользователей",
                                          notificationCount: "12")
                 }
                 
@@ -31,14 +31,14 @@ struct NotificationsView: View {
                     RatingTypeNotificationView()
                 } label: {
                     NotificationTypeView(titleText: "Оценка",
-                                         footnoteText: "Оценка Вашего контента другими пользователями",
+                                         footnoteText: "Оценка Вашего контента",
                                          notificationCount: "2k")
                 }
                 
                 NavigationLink {
                     SubscriberTypeNotificationView()
                 } label: {
-                    NotificationTypeView(titleText: "Читатели",
+                    NotificationTypeView(titleText: "\"Подчитатели\"",
                                          footnoteText: "Ваши читатели",
                                          notificationCount: "24")
                 }
@@ -63,7 +63,7 @@ struct NotificationsView: View {
                     StatisticTypeNotificationView()
                 } label: {
                     NotificationTypeView(titleText: "Статистика",
-                                         footnoteText: "Статистика взаимодействия с Вашим контентом",
+                                         footnoteText: "Статистика взаимодействия пользователей с Вашим контентом",
                                          notificationCount: "")
                 }
             }
@@ -84,7 +84,7 @@ extension NotificationsView {
         var notificationCount: String
         var body: some View {
             RoundedRectangle(cornerRadius: 20)
-                .stroke(Color.orange)
+                .stroke(Color("customOrange"))
                 .frame(height: 90)
                 .overlay {
                     HStack {
@@ -107,7 +107,7 @@ extension NotificationsView {
                                 .cornerRadius(10)
                         }
                         Image(systemName: "control")
-                            .foregroundColor(.orange)
+                            .foregroundColor(Color("customOrange"))
                             .rotationEffect(.degrees(90))
                             .padding(.trailing)
                     }

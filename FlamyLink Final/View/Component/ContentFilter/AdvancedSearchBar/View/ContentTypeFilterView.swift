@@ -14,15 +14,15 @@ struct ContentTypeFilterView: View {
         Menu {
             ForEach(ContentType.allCases, id: \.self) { item in
                 Button {
-                    searchBarState.filterType = item
+                    searchBarState.selectedFilterType = item
                 } label: {
                     Text(item.type)
                 }
             }
         } label: {
-            Text(searchBarState.filterType.type)
+            Text(searchBarState.selectedFilterType.type)
                 .font(.system(size: 20))
-                .foregroundColor(.orange)
+                .foregroundColor(Color("customOrange"))
         }
     }
 }

@@ -11,30 +11,34 @@ struct PostCell: View {
     @State private var showDetailedContentView = false
     
     var body: some View {
-        VStack(alignment: .leading, spacing: 4) {
-            HStack {
-                Text("Алибек БАЙМУРАТ")
-                    .font(.system(size: 16, weight: .bold))
-                    .lineLimit(1)
+        VStack {
+            VStack(alignment: .leading, spacing: 4) {
+                HStack {
+                    Text("Алибек БАЙМУРАТ")
+                        .font(.system(size: 16, weight: .bold))
+                        .lineLimit(1)
+                        .underline(color: Color("customOrange"))
+                    
+                    Spacer()
+                    
+                    ContextMenuView()
+                }
+                .padding(.bottom)
                 
-                Spacer()
+                Text("Всем привет")
                 
-                ContextMenuView()
+                NavigationLink {
+                    DetailedContentView()
+                } label: {
+                    Text("Показать полностью")
+                        .foregroundColor(Color("customOrange"))
+                }
+                
             }
-            .padding(.bottom)
-            
-            Text("Всем привет")
-            
-            NavigationLink {
-                DetailedContentView()
-            } label: {
-                Text("Показать полностью")
-            }
+            .padding()
             
             Divider()
         }
-        .padding()
-        
     }
 }
 

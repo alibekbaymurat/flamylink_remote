@@ -34,7 +34,7 @@ struct MainTabView: View {
                             
                             tabButtonView(image: item.type)
                                 .fontWeight(selectedTabButton == item ? .semibold : .regular)
-                                .foregroundColor(selectedTabButton == item ? .black : (MainTabButton.addPost == item ? .orange : .gray))
+                                .foregroundColor(selectedTabButton == item ? .black : (MainTabButton.addPost == item ? Color("customOrange") : .gray))
                                 .frame(width: MainTabButton.addPost == item ? 32 : 24, height: MainTabButton.addPost == item ? 32 : 24)
                                 .onTapGesture {
                                     if item == MainTabButton.addPost {

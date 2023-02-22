@@ -20,7 +20,7 @@ struct NewPostView: View {
                         .bold()
                         .padding(.horizontal)
                         .padding(.vertical, 8)
-                        .background(.orange)
+                        .background(Color("customOrange"))
                         .foregroundColor(.white)
                         .clipShape(Capsule())
                 }

@@ -19,7 +19,7 @@ struct FeedViewContentChooser: View {
                         .foregroundColor(selectedFilter == item ? .black : .gray)
                     if selectedFilter == item {
                         Capsule()
-                            .foregroundColor(Color(.orange))
+                            .foregroundColor(Color("customOrange"))
                             .frame(height: 3)
                     } else {
                         Capsule()

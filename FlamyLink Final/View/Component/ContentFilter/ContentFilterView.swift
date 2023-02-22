@@ -7,36 +7,45 @@
 
 import SwiftUI
 
+class ContentFilterViewStateSaver: ObservableObject {
+    @Published var selectedCountry: CountryFilter = .AllCountries
+    @Published var selectedRating: RatingFilter = .anyAll
+    @Published var selectedDateOfAddition: DateOfAdditionFilter = .anyAll
+}
+
 struct ContentFilterView: View {
+    @StateObject var contentFilterState = ContentFilterViewStateSaver()
     @Environment(\.dismiss) var dissmis
-    @State private var selectedCountry = "Все страны"
+    @State private var selectedCountry: CountryFilter = .AllCountries
     @State private var selectedRating: RatingFilter = .anyAll
     @State private var selectedDateOfAddition: DateOfAdditionFilter = .anyAll
-    let countries = ["Все страны", "Казахстан", "Австрия", "Англия", "Австралия", "Аргентина", "Армения", "Афганистан", "Бельгия", "Бразилия", "Германия", "Египет", "Индия", "Индонезия", "Испания", "Катар", "Китай", "Кыргызстан", "Новая Зеландия", "Пакистан", "Польша", "Россия", "Северная Корея", "США", "Узбекистан", "Франция", "Хорватия", "Южная Корея", "Япония"]
     
     var body: some View {
         Form {
             Section("Сортировать по: ") {
-                Picker("Оценка", selection: $selectedRating) {
+                Picker("Оценка", selection: $contentFilterState.selectedRating) {
                     ForEach(RatingFilter.allCases, id: \.self) { item in
                         Text(item.type)
                     }
                 }
-                Picker("Дата публикации", selection: $selectedDateOfAddition) {
+                Picker("Дата публикации", selection: $contentFilterState.selectedDateOfAddition) {
                     ForEach(DateOfAdditionFilter.allCases, id: \.self) { item in
                         Text(item.type)
                     }
                 }
             }
             Section("Фильтр") {
-                Picker("Страна", selection: $selectedCountry) {
-                    ForEach(countries, id: \.self) {
-                        Text($0)
+                Picker("Страна", selection: $contentFilterState.selectedCountry) {
+                    ForEach(CountryFilter.allCases, id: \.self) { item in
+                        Text(item.type)
                     }
                 }
             }
             Button("Применить") {
                 // нужно передать значения фильтра к той вью откуда открылся ContentFilterView
+//                contentFilterState.selectedRating = selectedRating
+//                contentFilterState.selectedDateOfAddition = selectedDateOfAddition
+//                contentFilterState.selectedCountry = selectedCountry
                 dissmis()
             }
             Button("Отменить") {
@@ -76,6 +85,62 @@ enum DateOfAdditionFilter: Int, CaseIterable {
         case .olderContent: return "Older content"
         case .newerContent: return "Newer content"
         case .anyAll: return "Любые"
+        }
+    }
+}
+
+enum CountryFilter: Int, CaseIterable {
+    case AllCountries
+    case Kazakhstan
+    case Russia
+    case Ukraine
+    case Uzbekistan
+    case Belarus
+    case Tadjikistan
+    case Georgia
+    case Azerbaijan
+    case Lithuania
+    case Moldova
+    case Latvia
+    case Kyrgyzstan
+    case Armenia
+    case Turkmenistan
+    case Estonia
+    
+    var type: String {
+        switch self {
+        case .AllCountries:
+            return "Все страны"
+        case .Kazakhstan:
+            return "Казахстан"
+        case .Russia:
+            return "Россия"
+        case .Ukraine:
+            return "Украина"
+        case .Uzbekistan:
+            return "Узбекистан"
+        case .Belarus:
+            return "Беларусь"
+        case .Tadjikistan:
+            return "Таджикистан"
+        case .Georgia:
+            return "Грузия"
+        case .Azerbaijan:
+            return "Азербайджан"
+        case .Lithuania:
+            return "Литва"
+        case .Moldova:
+            return "Молдовия"
+        case .Latvia:
+            return "Латвия"
+        case .Kyrgyzstan:
+            return "Киргизстан"
+        case .Armenia:
+            return "Армения"
+        case .Turkmenistan:
+            return "Туркменистан"
+        case .Estonia:
+            return "Эстония"
         }
     }
 }

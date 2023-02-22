@@ -10,61 +10,66 @@ import SwiftUI
 struct ProfileCell: View {
     @Binding var showDivider: Bool
     var body: some View {
-        VStack(alignment: .leading, spacing: 4) {
-            HStack {
-                Text("Алибек БАЙМУРАТ")
-                    .font(.system(size: 18, weight: .bold))
-                    .frame(width: UIScreen.main.bounds.width / 2, alignment: .leading)
-                    .lineLimit(1)
-                
-                Button(action: {
+        VStack {
+            VStack(alignment: .leading, spacing: 4) {
+                HStack {
+                    Text("Алибек БАЙМУРАТ")
+                        .font(.system(size: 18, weight: .bold))
+                        .frame(width: UIScreen.main.bounds.width / 2, alignment: .leading)
+                        .lineLimit(1)
+                        .underline(color: Color("customOrange"))
                     
-                }, label: {
-                    Text("Читать")
-                        .font(.system(size: 18))
-                        .frame(width: 100)
-                        .background(Color.orange)
-                        .foregroundColor(.white)
-                })
-                .cornerRadius(10)
+                    Button(action: {
+                        
+                    }, label: {
+                        Text("\"Подчитаться\"")
+                            .font(.system(size: 18))
+                            .frame(width: 130)
+                            .background(Color("customOrange"))
+                            .foregroundColor(.white)
+                    })
+                    .cornerRadius(10)
+                    
+                    Spacer()
+                    
+                    ContextMenuView()
+                }
                 
-                Spacer()
+                HStack {
+                    Text("@alibek_baimurat")
+                        .lineLimit(1)
+                        .frame(width: UIScreen.main.bounds.width / 2, alignment: .leading)
+                        .foregroundColor(.gray)
+                    VStack {
+                        Text("10k")
+                            .font(.system(.body, weight: .bold))
+                        Text("\"подчитателей\"")
+                    }
+                }
+                .padding(.bottom)
                 
-                ContextMenuView()
-            }
-            
-            HStack {
-                Text("@alibek_baimurat")
-                    .lineLimit(1)
-                    .frame(width: UIScreen.main.bounds.width / 2, alignment: .leading)
-                    .foregroundColor(.gray)
+                Text("  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a sollicitudin mi. Vivamus lobortis risus lectus, sit amet efficitur velit fermentum et. Sed enim justo, feugiat ut arcu a, malesuada tincidunt ante. Morbi venenatis est ut nisi rutrum, sed iaculis nibh suscipit. Nam id laoreet neque. In sit amet egestas nibh. Cras vitae sapien orci. Vestibulum faucibus nec mi nec facilisis. Suspendisse malesuada nisi eget mauris eleifend commodo. Donec laoreet dolor non sollicitudin dignissim. Donec fringilla condimentum consequat.")
+                    .font(.body)
+                    .lineLimit(5)
                 
-                Text("10k")
-                    .font(.system(.body, weight: .bold))
-                Text("читателей")
+                NavigationLink {
+                    DetailedContentView()
+                } label: {
+                    Text("Показать полностью")
+                        .foregroundColor(Color("customOrange"))
+                }
             }
-            .padding(.bottom)
+            .padding()
             
-            Text("  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a sollicitudin mi. Vivamus lobortis risus lectus, sit amet efficitur velit fermentum et. Sed enim justo, feugiat ut arcu a, malesuada tincidunt ante. Morbi venenatis est ut nisi rutrum, sed iaculis nibh suscipit. Nam id laoreet neque. In sit amet egestas nibh. Cras vitae sapien orci. Vestibulum faucibus nec mi nec facilisis. Suspendisse malesuada nisi eget mauris eleifend commodo. Donec laoreet dolor non sollicitudin dignissim. Donec fringilla condimentum consequat.")
-                .font(.body)
-                .lineLimit(5)
-            
-            NavigationLink {
-                DetailedContentView()
-            } label: {
-                Text("Показать полностью")
+            if showDivider {
+                Divider()
             }
-        }
-        .padding()
-        
-        if showDivider {
-            Divider()
         }
     }
 }
 
 struct ProfileCell_Previews: PreviewProvider {
     static var previews: some View {
-        ProfileCell(showDivider: .constant(false))
+        ProfileCell(showDivider: .constant(true))
     }
 }
