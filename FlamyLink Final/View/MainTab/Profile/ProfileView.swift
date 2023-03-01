@@ -23,9 +23,7 @@ struct ProfileView: View {
     
     var body: some View {
         NavigationStack {
-            VStack(spacing: 0) {
-                NavigationBarView()
-                
+            VStack {
                 ScrollView {
                     ProfileCell(showDivider: $showDivider)
                     
@@ -65,6 +63,8 @@ struct ProfileView: View {
                     }
                 }
             }
+            .navigationTitle("Профиль")
+            .navigationBarTitleDisplayMode(.inline)
         }
     }
 }

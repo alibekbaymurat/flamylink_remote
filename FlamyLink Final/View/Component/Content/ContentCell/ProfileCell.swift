@@ -14,21 +14,21 @@ struct ProfileCell: View {
             VStack(alignment: .leading, spacing: 4) {
                 HStack {
                     Text("Алибек БАЙМУРАТ")
-                        .font(.system(size: 18, weight: .bold))
+                        .font(.headline)
                         .frame(width: UIScreen.main.bounds.width / 2, alignment: .leading)
                         .lineLimit(1)
-                        .underline(color: Color("customOrange"))
+                        .underline()
                     
                     Button(action: {
                         
                     }, label: {
-                        Text("\"Подчитаться\"")
+                        Text("Подписаться")
                             .font(.system(size: 18))
                             .frame(width: 130)
                             .background(Color("customOrange"))
                             .foregroundColor(.white)
+                            .cornerRadius(10)
                     })
-                    .cornerRadius(10)
                     
                     Spacer()
                     
@@ -38,12 +38,13 @@ struct ProfileCell: View {
                 HStack {
                     Text("@alibek_baimurat")
                         .lineLimit(1)
-                        .frame(width: UIScreen.main.bounds.width / 2, alignment: .leading)
+                        .frame(width: UIScreen.main.bounds.width / 2,
+                               alignment: .leading)
                         .foregroundColor(.gray)
                     VStack {
                         Text("10k")
                             .font(.system(.body, weight: .bold))
-                        Text("\"подчитателей\"")
+                        Text("подписчиков")
                     }
                 }
                 .padding(.bottom)
@@ -52,12 +53,23 @@ struct ProfileCell: View {
                     .font(.body)
                     .lineLimit(5)
                 
-                NavigationLink {
-                    DetailedContentView()
-                } label: {
-                    Text("Показать полностью")
-                        .foregroundColor(Color("customOrange"))
+                HStack {
+                    NavigationLink {
+                        DetailedContentView()
+                    } label: {
+                        Text("Показать полностью")
+                    }
+                    
+                    Spacer()
+                    
+                    HStack {
+                        Image(systemName: "eye")
+                        Text("154")
+                    }
+                    .foregroundColor(Color(.systemGray))
                 }
+                
+                ContentActionsView()
             }
             .padding()
             

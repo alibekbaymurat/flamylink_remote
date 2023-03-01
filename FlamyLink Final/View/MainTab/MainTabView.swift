@@ -8,76 +8,57 @@
 import SwiftUI
 
 struct MainTabView: View {
-    @State private var selectedTabButton: MainTabButton = .newsFeed
-    @State private var showNewPostView: Bool = false
-    @State private var showDetailedContentView: Bool = false
+    @State private var selectedTabIndex = 0
+
     var body: some View {
-        ZStack {
-            if showNewPostView {
-                NewPostView(showNewPostView: $showNewPostView)
-            } else {
-                VStack {
-                    switch selectedTabButton {
-                    case .newsFeed:
-                        FeedView()
-                    case .search:
-                        SearchView()
-                    case .addPost:
-                        NewPostView(showNewPostView: $showNewPostView)
-                    case .notification:
-                        NotificationsView()
-                    case .profile:
-                        ProfileView()
+        VStack(spacing: 0) {
+            TabView(selection: $selectedTabIndex) {
+                FeedView()
+                    .onAppear {
+                        self.selectedTabIndex = 0
                     }
-                    HStack(alignment: .center, spacing: 50) {
-                        ForEach(MainTabButton.allCases, id: \.self) { item in
-                            
-                            tabButtonView(image: item.type)
-                                .fontWeight(selectedTabButton == item ? .semibold : .regular)
-                                .foregroundColor(selectedTabButton == item ? .black : (MainTabButton.addPost == item ? Color("customOrange") : .gray))
-                                .frame(width: MainTabButton.addPost == item ? 32 : 24, height: MainTabButton.addPost == item ? 32 : 24)
-                                .onTapGesture {
-                                    if item == MainTabButton.addPost {
-                                        showNewPostView.toggle()
-                                    } else {
-                                        self.selectedTabButton = item
-                                    }
-                                }
-                        }
+                    .tabItem {
+                        Image(systemName: "newspaper")
                     }
-                    .frame(width: UIScreen.main.bounds.width, height: 50)
-                    .edgesIgnoringSafeArea(.bottom)
-                    .background(Color(.systemGray6))
-                }
+                    .tag(0)
+                
+                SearchView()
+                    .onAppear {
+                        self.selectedTabIndex = 1
+                    }
+                    .tabItem {
+                        Image(systemName: "magnifyingglass")
+                    }
+                    .tag(1)
+                
+                NewPostView()
+                    .onAppear {
+                        self.selectedTabIndex = 2
+                    }
+                    .tabItem {
+                        Image(systemName: "plus")
+                        
+                    }
+                    .tag(2)
+                
+                NotificationsView()
+                    .onAppear {
+                        self.selectedTabIndex = 3
+                    }
+                    .tabItem {
+                        Image(systemName: "bell")
+                    }
+                    .tag(3)
+                
+                ProfileView()
+                    .onAppear {
+                        self.selectedTabIndex = 4
+                    }
+                    .tabItem {
+                        Image(systemName: "person")
+                    }
+                    .tag(4)
             }
-            
-        }
-    }
-}
-
-extension MainTabView {
-    private func tabButtonView(image: String) -> some View {
-        Image(systemName: image)
-            .resizable()
-            .scaledToFit()
-            .tint(Color(.systemGray))
-    }
-}
-
-enum MainTabButton: Int, CaseIterable {
-    case newsFeed
-    case search
-    case addPost
-    case notification
-    case profile
-    
-    var type: String {
-        switch self {
-        case .newsFeed: return "house"
-        case .search: return "magnifyingglass"
-        case .addPost: return "plus.circle"
-        case .notification: return "bell"
-        case .profile: return "person"
         }
     }
 }

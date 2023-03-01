@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A21DB11F29997A0000A9662D /* NavigationBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21DB11E29997A0000A9662D /* NavigationBarView.swift */; };
 		A23429EA2981C1A500DB8848 /* CommentTypeNotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23429E92981C1A500DB8848 /* CommentTypeNotificationView.swift */; };
 		A23429EC2981C1C900DB8848 /* RatingTypeNotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23429EB2981C1C900DB8848 /* RatingTypeNotificationView.swift */; };
 		A23429EE2981C22900DB8848 /* MentionTypeNotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23429ED2981C22900DB8848 /* MentionTypeNotificationView.swift */; };
@@ -40,10 +39,10 @@
 		A2367B1729461F0100CD1620 /* FeedViewContentChooser.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2367B1629461F0100CD1620 /* FeedViewContentChooser.swift */; };
 		A29F2449296378F7003925B8 /* CommentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29F2448296378F7003925B8 /* CommentView.swift */; };
 		A2B0B0752978938D00DCC6BC /* DetailedContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B0B0742978938D00DCC6BC /* DetailedContentView.swift */; };
+		A2FDC16B29A7E6E8003A8DDC /* FontView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2FDC16A29A7E6E8003A8DDC /* FontView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		A21DB11E29997A0000A9662D /* NavigationBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarView.swift; sourceTree = "<group>"; };
 		A23429E92981C1A500DB8848 /* CommentTypeNotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentTypeNotificationView.swift; sourceTree = "<group>"; };
 		A23429EB2981C1C900DB8848 /* RatingTypeNotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingTypeNotificationView.swift; sourceTree = "<group>"; };
 		A23429ED2981C22900DB8848 /* MentionTypeNotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MentionTypeNotificationView.swift; sourceTree = "<group>"; };
@@ -76,6 +75,7 @@
 		A29899D929774BB900B0C8CC /* FlamyLink-Final-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "FlamyLink-Final-Info.plist"; sourceTree = SOURCE_ROOT; };
 		A29F2448296378F7003925B8 /* CommentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentView.swift; sourceTree = "<group>"; };
 		A2B0B0742978938D00DCC6BC /* DetailedContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedContentView.swift; sourceTree = "<group>"; };
+		A2FDC16A29A7E6E8003A8DDC /* FontView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -188,7 +188,6 @@
 				A2367B0F2945080100CD1620 /* ContentFilter */,
 				A2367AF5293E804E00CD1620 /* ContentActionsView.swift */,
 				A2367B092944D5F900CD1620 /* ContextMenuView.swift */,
-				A21DB11E29997A0000A9662D /* NavigationBarView.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -294,6 +293,7 @@
 		A2FDC16729A295C5003A8DDC /* Xper */ = {
 			isa = PBXGroup;
 			children = (
+				A2FDC16A29A7E6E8003A8DDC /* FontView.swift */,
 			);
 			path = Xper;
 			sourceTree = "<group>";
@@ -380,7 +380,6 @@
 				A29F2449296378F7003925B8 /* CommentView.swift in Sources */,
 				A2367B022943B8C100CD1620 /* SearchView.swift in Sources */,
 				A2367B1729461F0100CD1620 /* FeedViewContentChooser.swift in Sources */,
-				A21DB11F29997A0000A9662D /* NavigationBarView.swift in Sources */,
 				A23429F02981C29700DB8848 /* DonationTypeNotificationView.swift in Sources */,
 				A2367B002943B89100CD1620 /* NewPostView.swift in Sources */,
 				A2367AD6293E79B300CD1620 /* ContentView.swift in Sources */,
@@ -402,6 +401,7 @@
 				A2367AF82943B7F500CD1620 /* MainTabView.swift in Sources */,
 				A2367B0C2944F6FF00CD1620 /* ContentTypeFilterView.swift in Sources */,
 				A2367AF6293E804E00CD1620 /* ContentActionsView.swift in Sources */,
+				A2FDC16B29A7E6E8003A8DDC /* FontView.swift in Sources */,
 				A2367B152945BED500CD1620 /* SearchBar.swift in Sources */,
 				A2367AF4293E802900CD1620 /* PostCell.swift in Sources */,
 			);

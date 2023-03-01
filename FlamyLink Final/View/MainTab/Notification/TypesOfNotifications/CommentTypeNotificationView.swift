@@ -13,7 +13,12 @@ struct CommentTypeNotificationView: View {
             Text("Комментарии к Вашему контенту")
                 .bold()
                 .padding()
-            
+            Group {
+                Text("Расул Гамзатов")
+                    .underline() +
+                Text(" ответил на Ваш ") +
+                Text("пост")
+            }
             PostCell()
         }
     }

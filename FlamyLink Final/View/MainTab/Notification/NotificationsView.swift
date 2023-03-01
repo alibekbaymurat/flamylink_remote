@@ -38,7 +38,7 @@ struct NotificationsView: View {
                 NavigationLink {
                     SubscriberTypeNotificationView()
                 } label: {
-                    NotificationTypeView(titleText: "\"Подчитатели\"",
+                    NotificationTypeView(titleText: "Читатели",
                                          footnoteText: "Ваши читатели",
                                          notificationCount: "24")
                 }
@@ -67,6 +67,8 @@ struct NotificationsView: View {
                                          notificationCount: "")
                 }
             }
+            .navigationTitle("Уведомления")
+            .navigationBarTitleDisplayMode(.inline)
         }
     }
 }
@@ -84,7 +86,7 @@ extension NotificationsView {
         var notificationCount: String
         var body: some View {
             RoundedRectangle(cornerRadius: 20)
-                .stroke(Color("customOrange"))
+                .stroke(.black)
                 .frame(height: 90)
                 .overlay {
                     HStack {
@@ -107,7 +109,7 @@ extension NotificationsView {
                                 .cornerRadius(10)
                         }
                         Image(systemName: "control")
-                            .foregroundColor(Color("customOrange"))
+                            .foregroundColor(.black)
                             .rotationEffect(.degrees(90))
                             .padding(.trailing)
                     }

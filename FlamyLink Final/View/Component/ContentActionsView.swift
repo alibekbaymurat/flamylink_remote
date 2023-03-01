@@ -14,63 +14,43 @@ struct ContentActionsView: View {
     var body: some View {
         HStack {
             //Uprate
-            HStack {
-                ContentActionButtonView(iconName: "arrowtriangle.up")
-                Text("3K")
+            Button {
+                
+            } label: {
+                ContentActionButtonView(imageName: "arrowtriangle.up", count: "3K")
             }
             
             Spacer()
             
             //Downrate
-            HStack {
-                ContentActionButtonView(iconName: "arrowtriangle.down")
-                Text("10K")
+            Button {
+                
+            } label: {
+                ContentActionButtonView(imageName: "arrowtriangle.down", count: "10K")
             }
             
             Spacer()
             
             //Comment
-            HStack {
-                ContentActionButtonView(iconName: "bubble.left")
-                Text("100M")
+            Button {
+                
+            } label: {
+                ContentActionButtonView(imageName: "bubble.left", count: "100M")
             }
-            
             
             Spacer()
             
-            //Detailed
-            ContentActionButtonView(iconName: "arrow.up.left.and.arrow.down.right")
+            //Share
+            Button {
+                
+            } label: {
+                ContentActionButtonView(imageName: "square.and.arrow.up", count: "")
+            }
         }
         .padding(.top)
         .foregroundColor(.black)
         .sheet(isPresented: $showCommentView) {
             showSecondaryCommentView()
-        }
-//        .sheet(isPresented: $showDetailedContentView) {
-//            NavigationStack {
-//                DetailedContentView(showDetailedContentView: $showDetailedContentView)
-//                    .toolbar {
-//                        ToolbarItemGroup(placement: .navigationBarLeading) {
-//                            Button {
-//                                showDetailedContentView.toggle()
-//                            } label: {
-//                                Text("Back")
-//                            }
-//                        }
-//                    }
-//            }
-//        }
-    }
-}
-
-extension ContentActionsView {
-    struct ContentActionButtonView: View {
-        var iconName: String
-        var body: some View {
-            Image(systemName: iconName)
-                .resizable()
-                .scaledToFit()
-                .frame(width: 18, height: 18)
         }
     }
 }
@@ -99,6 +79,24 @@ extension ContentActionsView {
         }
     }
 }
+
+struct ContentActionButtonView: View {
+    var imageName: String
+    var count: String
+    var body: some View {
+        HStack(spacing: 2) {
+            Image(systemName: imageName)
+            if count != "" {
+                Text(count)
+            }
+        }
+        .font(.subheadline)
+        .frame(width: count != "" ? 85 : 35, height: 30)
+        .background(Color(.systemGray6))
+        .cornerRadius(20)
+    }
+}
+
 
 struct ContentActionsView_Previews: PreviewProvider {
     static var previews: some View {

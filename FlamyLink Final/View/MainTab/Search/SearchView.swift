@@ -9,15 +9,21 @@ import SwiftUI
 
 struct SearchView: View {
     var body: some View {
-        VStack {
-            AdvancedSearchBarView()
-            ScrollView {
-                LazyVStack {
-                    ForEach(1...5, id: \.self) { _ in
-                        PostCell()
+        NavigationStack {
+            VStack {
+                AdvancedSearchBarView()
+                ScrollView {
+                    LazyVStack {
+                        ForEach(1...5, id: \.self) { _ in
+                            PostCell()
+                        }
                     }
                 }
             }
+            
+            .navigationTitle("Поиск")
+            
+            .navigationBarTitleDisplayMode(.inline)
         }
     }
 }

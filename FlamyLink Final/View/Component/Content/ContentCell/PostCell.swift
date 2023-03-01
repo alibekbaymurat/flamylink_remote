@@ -17,7 +17,7 @@ struct PostCell: View {
                     Text("Алибек БАЙМУРАТ")
                         .font(.system(size: 16, weight: .bold))
                         .lineLimit(1)
-                        .underline(color: Color("customOrange"))
+                        .underline()
                     
                     Spacer()
                     
@@ -25,15 +25,27 @@ struct PostCell: View {
                 }
                 .padding(.bottom)
                 
-                Text("Всем привет")
+                Text("  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a sollicitudin mi. Vivamus lobortis risus lectus, sit amet efficitur velit fermentum et. Sed enim justo, feugiat ut arcu a, malesuada tincidunt ante. Morbi venenatis est ut nisi rutrum, sed iaculis nibh suscipit. Nam id laoreet neque. In sit amet egestas nibh. Cras vitae sapien orci. Vestibulum faucibus nec mi nec facilisis. Suspendisse malesuada nisi eget mauris eleifend commodo. Donec laoreet dolor non sollicitudin dignissim. Donec fringilla condimentum consequat.")
+                    .font(.body)
+                    .lineLimit(5)
                 
-                NavigationLink {
-                    DetailedContentView()
-                } label: {
-                    Text("Показать полностью")
-                        .foregroundColor(Color("customOrange"))
+                HStack {
+                    NavigationLink {
+                        DetailedContentView()
+                    } label: {
+                        Text("Показать полностью")
+                    }
+                    
+                    Spacer()
+                    
+                    HStack {
+                        Image(systemName: "eye")
+                        Text("154")
+                    }
+                    .foregroundColor(Color(.systemGray))
                 }
                 
+                ContentActionsView()
             }
             .padding()
             

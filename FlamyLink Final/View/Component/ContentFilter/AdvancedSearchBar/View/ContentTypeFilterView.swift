@@ -21,8 +21,8 @@ struct ContentTypeFilterView: View {
             }
         } label: {
             Text(searchBarState.selectedFilterType.type)
-                .font(.system(size: 20))
-                .foregroundColor(Color("customOrange"))
+                .bold()
+                .foregroundColor(.black)
         }
     }
 }

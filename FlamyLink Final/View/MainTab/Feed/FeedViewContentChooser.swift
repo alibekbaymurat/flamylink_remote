@@ -19,7 +19,6 @@ struct FeedViewContentChooser: View {
                         .foregroundColor(selectedFilter == item ? .black : .gray)
                     if selectedFilter == item {
                         Capsule()
-                            .foregroundColor(Color("customOrange"))
                             .frame(height: 3)
                     } else {
                         Capsule()
@@ -34,7 +33,10 @@ struct FeedViewContentChooser: View {
                 }
             }
         }
-        .overlay(Divider().offset(x: 0, y: 16))
+        .overlay(
+            Divider()
+                .offset(x: 0, y: 16)
+        )
     }
 }
 
