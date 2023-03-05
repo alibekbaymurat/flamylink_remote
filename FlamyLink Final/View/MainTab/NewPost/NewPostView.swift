@@ -89,7 +89,7 @@ extension NewPostView {
         var body: some View {
             RoundedRectangle(cornerRadius: 20)
                 .stroke(.black)
-                .frame(height: 90)
+                .frame(height: 80)
                 .overlay {
                     HStack {
                         VStack(alignment: .leading) {

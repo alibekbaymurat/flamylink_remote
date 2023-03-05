@@ -87,16 +87,19 @@ extension NotificationsView {
         var body: some View {
             RoundedRectangle(cornerRadius: 20)
                 .stroke(.black)
-                .frame(height: 90)
+                .frame(height: 80)
                 .overlay {
                     HStack {
                         VStack(alignment: .leading) {
                             Text(titleText)
                                 .font(.title3)
                                 .fontWeight(.bold)
+                                .lineLimit(1)
+                            
                             Text(footnoteText)
                                 .font(.footnote)
                                 .multilineTextAlignment(.leading)
+                                .lineLimit(2)
                         }
                         .foregroundColor(.black)
                         .padding(.leading)

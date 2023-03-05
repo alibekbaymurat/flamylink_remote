@@ -8,9 +8,7 @@
 import SwiftUI
 
 struct ContentActionsView: View {
-    @State private var showCommentView: Bool = false
-    @State private var showDetailedContentView = false
-    static var counterOfScreen: Int = 0
+    @State private var showShareView: Bool = false
     var body: some View {
         HStack {
             //Uprate
@@ -32,8 +30,8 @@ struct ContentActionsView: View {
             Spacer()
             
             //Comment
-            Button {
-                
+            NavigationLink {
+                DetailedContentView(fromCommentButton: true)
             } label: {
                 ContentActionButtonView(imageName: "bubble.left", count: "100M")
             }
@@ -41,44 +39,42 @@ struct ContentActionsView: View {
             Spacer()
             
             //Share
-            Button {
-                
-            } label: {
+            ShareLink(item: URL(string:"https://www.swiftanytime.com")!) {
                 ContentActionButtonView(imageName: "square.and.arrow.up", count: "")
             }
         }
         .padding(.top)
         .foregroundColor(.black)
-        .sheet(isPresented: $showCommentView) {
-            showSecondaryCommentView()
+        .sheet(isPresented: $showShareView) {
+            ShareView()
         }
     }
 }
 
-extension ContentActionsView {
-    private func showSecondaryCommentView() -> some View {
-        NavigationStack {
-            CommentView()
-                .toolbar {
-                    ToolbarItemGroup(placement: .navigationBarLeading) {
-                        Button {
-                            ContentActionsView.counterOfScreen -= 1
-                            showCommentView = false
-                        } label: {
-                            Text("Back")
-                        }
-                        Text("\(ContentActionsView.counterOfScreen)")
-                        Button {
-                            // при нажатии нужно чтоб переходил на первый комент
-                        } label: {
-                            Text("Показать первый комментарий")
-                        }
-                        
-                    }
-                }
-        }
-    }
-}
+//extension ContentActionsView {
+//    private func showSecondaryCommentView() -> some View {
+//        NavigationStack {
+//            CommentView()
+//                .toolbar {
+//                    ToolbarItemGroup(placement: .navigationBarLeading) {
+//                        Button {
+//                            ContentActionsView.counterOfScreen -= 1
+//                            showCommentView = false
+//                        } label: {
+//                            Text("Back")
+//                        }
+//                        Text("\(ContentActionsView.counterOfScreen)")
+//                        Button {
+//                            // при нажатии нужно чтоб переходил на первый комент
+//                        } label: {
+//                            Text("Показать первый комментарий")
+//                        }
+//
+//                    }
+//                }
+//        }
+//    }
+//}
 
 struct ContentActionButtonView: View {
     var imageName: String

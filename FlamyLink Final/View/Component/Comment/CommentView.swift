@@ -11,8 +11,6 @@ struct CommentView: View {
     
     var body: some View {
         VStack {
-            AdvancedSearchBarView()
-                .padding(.top)
             ScrollView {
                 LazyVStack {
                     ForEach(1...10, id: \.self) { _ in

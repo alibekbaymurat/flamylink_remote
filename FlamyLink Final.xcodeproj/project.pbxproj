@@ -39,6 +39,10 @@
 		A2367B1729461F0100CD1620 /* FeedViewContentChooser.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2367B1629461F0100CD1620 /* FeedViewContentChooser.swift */; };
 		A29F2449296378F7003925B8 /* CommentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29F2448296378F7003925B8 /* CommentView.swift */; };
 		A2B0B0752978938D00DCC6BC /* DetailedContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B0B0742978938D00DCC6BC /* DetailedContentView.swift */; };
+		A2F44A1929AF82D600B45B78 /* CommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F44A1829AF82D600B45B78 /* CommentCell.swift */; };
+		A2F44A1C29AF90B200B45B78 /* ShareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F44A1B29AF90B200B45B78 /* ShareView.swift */; };
+		A2F44A1F29AFA77F00B45B78 /* ReadMoreButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F44A1E29AFA77F00B45B78 /* ReadMoreButtonView.swift */; };
+		A2F44A2129AFDB1D00B45B78 /* LineLimitedTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F44A2029AFDB1D00B45B78 /* LineLimitedTextView.swift */; };
 		A2FDC16B29A7E6E8003A8DDC /* FontView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2FDC16A29A7E6E8003A8DDC /* FontView.swift */; };
 /* End PBXBuildFile section */
 
@@ -75,6 +79,10 @@
 		A29899D929774BB900B0C8CC /* FlamyLink-Final-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "FlamyLink-Final-Info.plist"; sourceTree = SOURCE_ROOT; };
 		A29F2448296378F7003925B8 /* CommentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentView.swift; sourceTree = "<group>"; };
 		A2B0B0742978938D00DCC6BC /* DetailedContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedContentView.swift; sourceTree = "<group>"; };
+		A2F44A1829AF82D600B45B78 /* CommentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentCell.swift; sourceTree = "<group>"; };
+		A2F44A1B29AF90B200B45B78 /* ShareView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareView.swift; sourceTree = "<group>"; };
+		A2F44A1E29AFA77F00B45B78 /* ReadMoreButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadMoreButtonView.swift; sourceTree = "<group>"; };
+		A2F44A2029AFDB1D00B45B78 /* LineLimitedTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineLimitedTextView.swift; sourceTree = "<group>"; };
 		A2FDC16A29A7E6E8003A8DDC /* FontView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -182,12 +190,11 @@
 		A2367AEB293E7DE000CD1620 /* Component */ = {
 			isa = PBXGroup;
 			children = (
+				A2F44A1A29AF90A400B45B78 /* Share */,
 				A29F2447296378E2003925B8 /* Comment */,
 				A23429F72981C64F00DB8848 /* DetailedContent */,
 				A2367AF2293E801E00CD1620 /* Content */,
 				A2367B0F2945080100CD1620 /* ContentFilter */,
-				A2367AF5293E804E00CD1620 /* ContentActionsView.swift */,
-				A2367B092944D5F900CD1620 /* ContextMenuView.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -203,6 +210,7 @@
 		A2367AF2293E801E00CD1620 /* Content */ = {
 			isa = PBXGroup;
 			children = (
+				A2F44A1D29AFA74100B45B78 /* Component */,
 				A26A4C81297B3DBD00FB3B91 /* ContentCell */,
 			);
 			path = Content;
@@ -276,6 +284,7 @@
 		A26A4C81297B3DBD00FB3B91 /* ContentCell */ = {
 			isa = PBXGroup;
 			children = (
+				A2F44A1829AF82D600B45B78 /* CommentCell.swift */,
 				A2367AF3293E802900CD1620 /* PostCell.swift */,
 				A2367AF0293E7FE000CD1620 /* ProfileCell.swift */,
 			);
@@ -290,10 +299,29 @@
 			path = Comment;
 			sourceTree = "<group>";
 		};
+		A2F44A1A29AF90A400B45B78 /* Share */ = {
+			isa = PBXGroup;
+			children = (
+				A2F44A1B29AF90B200B45B78 /* ShareView.swift */,
+			);
+			path = Share;
+			sourceTree = "<group>";
+		};
+		A2F44A1D29AFA74100B45B78 /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				A2367B092944D5F900CD1620 /* ContextMenuView.swift */,
+				A2367AF5293E804E00CD1620 /* ContentActionsView.swift */,
+				A2F44A1E29AFA77F00B45B78 /* ReadMoreButtonView.swift */,
+			);
+			path = Component;
+			sourceTree = "<group>";
+		};
 		A2FDC16729A295C5003A8DDC /* Xper */ = {
 			isa = PBXGroup;
 			children = (
 				A2FDC16A29A7E6E8003A8DDC /* FontView.swift */,
+				A2F44A2029AFDB1D00B45B78 /* LineLimitedTextView.swift */,
 			);
 			path = Xper;
 			sourceTree = "<group>";
@@ -376,6 +404,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A2F44A1C29AF90B200B45B78 /* ShareView.swift in Sources */,
 				A2367B0E2944FFA000CD1620 /* ContentFilterButtonView.swift in Sources */,
 				A29F2449296378F7003925B8 /* CommentView.swift in Sources */,
 				A2367B022943B8C100CD1620 /* SearchView.swift in Sources */,
@@ -391,14 +420,17 @@
 				A2367AEE293E7E7600CD1620 /* ProfileView.swift in Sources */,
 				A2367B112945081500CD1620 /* ContentFilterView.swift in Sources */,
 				A23429F42981C2DE00DB8848 /* StatisticTypeNotificationView.swift in Sources */,
+				A2F44A2129AFDB1D00B45B78 /* LineLimitedTextView.swift in Sources */,
 				A2367AD4293E79B300CD1620 /* FlamyLink_FinalApp.swift in Sources */,
 				A23429F22981C2C200DB8848 /* SubscriberTypeNotificationView.swift in Sources */,
 				A2367AFE2943B86300CD1620 /* NotificationsView.swift in Sources */,
 				A23429EC2981C1C900DB8848 /* RatingTypeNotificationView.swift in Sources */,
 				A2367B042943B8D100CD1620 /* FeedView.swift in Sources */,
 				A23429F62981C2F900DB8848 /* RepostTypeNotificationView.swift in Sources */,
+				A2F44A1F29AFA77F00B45B78 /* ReadMoreButtonView.swift in Sources */,
 				A2367AF1293E7FE000CD1620 /* ProfileCell.swift in Sources */,
 				A2367AF82943B7F500CD1620 /* MainTabView.swift in Sources */,
+				A2F44A1929AF82D600B45B78 /* CommentCell.swift in Sources */,
 				A2367B0C2944F6FF00CD1620 /* ContentTypeFilterView.swift in Sources */,
 				A2367AF6293E804E00CD1620 /* ContentActionsView.swift in Sources */,
 				A2FDC16B29A7E6E8003A8DDC /* FontView.swift in Sources */,

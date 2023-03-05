@@ -13,11 +13,16 @@ struct ProfileCell: View {
         VStack {
             VStack(alignment: .leading, spacing: 4) {
                 HStack {
-                    Text("Алибек БАЙМУРАТ")
-                        .font(.headline)
-                        .frame(width: UIScreen.main.bounds.width / 2, alignment: .leading)
-                        .lineLimit(1)
-                        .underline()
+                    NavigationLink {
+                        ProfileView()
+                    } label: {
+                        Text("Алибек БАЙМУРАТ")
+                            .font(.headline)
+                            .frame(width: UIScreen.main.bounds.width / 2, alignment: .leading)
+                            .lineLimit(1)
+                            .underline()
+                            .foregroundColor(.black)
+                    }
                     
                     Button(action: {
                         
@@ -49,25 +54,7 @@ struct ProfileCell: View {
                 }
                 .padding(.bottom)
                 
-                Text("  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a sollicitudin mi. Vivamus lobortis risus lectus, sit amet efficitur velit fermentum et. Sed enim justo, feugiat ut arcu a, malesuada tincidunt ante. Morbi venenatis est ut nisi rutrum, sed iaculis nibh suscipit. Nam id laoreet neque. In sit amet egestas nibh. Cras vitae sapien orci. Vestibulum faucibus nec mi nec facilisis. Suspendisse malesuada nisi eget mauris eleifend commodo. Donec laoreet dolor non sollicitudin dignissim. Donec fringilla condimentum consequat.")
-                    .font(.body)
-                    .lineLimit(5)
-                
-                HStack {
-                    NavigationLink {
-                        DetailedContentView()
-                    } label: {
-                        Text("Показать полностью")
-                    }
-                    
-                    Spacer()
-                    
-                    HStack {
-                        Image(systemName: "eye")
-                        Text("154")
-                    }
-                    .foregroundColor(Color(.systemGray))
-                }
+                LineLimitedTextView("  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a sollicitudin mi. Vivamus lobortis risus lectus, sit amet efficitur velit fermentum et.")
                 
                 ContentActionsView()
             }

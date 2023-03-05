@@ -19,7 +19,7 @@ struct ProfileView: View {
     @StateObject var searchBarState = AdvancedSearchBarViewStateSaver()
     @State private var showSearchBarOnTop = false
     @State private var showDivider = false
-    @State private var scrollOffset = CGFloat.zero
+    @State private var scrollOffset = CGFloat.zero 
     
     var body: some View {
         NavigationStack {
@@ -29,13 +29,14 @@ struct ProfileView: View {
                     
                     LazyVStack {
                         AdvancedSearchBarView(searchBarState: searchBarState)
-                            .background(GeometryReader { geo in
-                                let offset = -geo.frame(in: .named("scrollSpace")).minY
-                                Color.clear
-                                    .preference(key: ScrollViewOffsetPreferenceKey.self,
-                                                value: offset)
-                            })
-                            
+                            .background(
+                                GeometryReader { geo in
+                                    let offset = -geo.frame(in: .named("scrollSpace")).minY
+                                    Color.clear
+                                        .preference(key: ScrollViewOffsetPreferenceKey.self,
+                                                    value: offset)
+                                }
+                            )
                         
                         ForEach(1...10, id: \.self) { _ in
                             PostCell()
