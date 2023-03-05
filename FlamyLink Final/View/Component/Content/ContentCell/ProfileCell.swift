@@ -46,11 +46,18 @@ struct ProfileCell: View {
                         .frame(width: UIScreen.main.bounds.width / 2,
                                alignment: .leading)
                         .foregroundColor(.gray)
-                    VStack {
-                        Text("10k")
-                            .font(.system(.body, weight: .bold))
-                        Text("подписчиков")
-                    }
+                    
+                    RoundedRectangle(cornerRadius: 20)
+                        
+                        .stroke(.black)
+                        .frame(height: 45)
+                        .overlay {
+                            VStack {
+                                Text("10k")
+                                    .font(.system(.body, weight: .bold))
+                                Text("подписчиков")
+                            }
+                        }
                 }
                 .padding(.bottom)
                 
