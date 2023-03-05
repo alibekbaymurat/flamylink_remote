@@ -39,7 +39,7 @@ struct ContentActionsView: View {
             Spacer()
             
             //Share
-            ShareLink(item: URL(string:"https://www.swiftanytime.com")!) {
+            ShareLink(item: URL(string:"https://www.google.com")!) {
                 ContentActionButtonView(imageName: "square.and.arrow.up", count: "")
             }
         }

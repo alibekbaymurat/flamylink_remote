@@ -11,7 +11,7 @@ struct DetailedContentView: View {
     @StateObject var searchBarState = AdvancedSearchBarViewStateSaver()
     @State private var showSearchBarOnTop = false
     @State private var scrollOffset = CGFloat.zero
-    var fromCommentButton: Bool
+    @State var fromCommentButton: Bool
     
     var body: some View {
         ScrollViewReader { scrollView in
@@ -62,6 +62,8 @@ struct DetailedContentView: View {
                     if fromCommentButton {
                         scrollView.scrollTo("CommentStart", anchor: .top)
                     }
+                    //чтобы при переходе назад сохранялось состояние прокрутки
+                    self.fromCommentButton.toggle()
                 }
         }
     }
