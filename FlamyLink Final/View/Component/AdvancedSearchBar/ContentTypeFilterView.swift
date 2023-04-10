@@ -11,20 +11,12 @@ struct ContentTypeFilterView: View {
     @StateObject var searchBarState = AdvancedSearchBarViewStateSaver()
     
     var body: some View {
-        Menu {
+        Picker(selection: $searchBarState.selectedFilterType) {
             ForEach(ContentType.allCases, id: \.self) { item in
-                Button {
-                    searchBarState.selectedFilterType = item
-                } label: {
-                    Text(item.type)
-                        .font(.callout)
-                }
+                Text(item.type)
             }
         } label: {
             Text(searchBarState.selectedFilterType.type)
-                .font(.callout)
-                .bold()
-                .foregroundColor(.black)
         }
     }
 }
@@ -38,11 +30,11 @@ enum ContentType: Int, CaseIterable {
     
     var type: String {
         switch self {
-        case .post: return "/посты"
-        case .hashtag: return "/хештеги"
-        case .comment: return "/комментарии"
-        case .profile: return "/профили"
-        case .repost: return "/репосты"
+        case .post: return "посты"
+        case .hashtag: return "хештеги"
+        case .comment: return "комментарии"
+        case .profile: return "профили"
+        case .repost: return "репосты"
         }
     }
 }

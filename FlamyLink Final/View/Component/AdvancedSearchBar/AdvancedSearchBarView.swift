@@ -28,7 +28,7 @@ struct AdvancedSearchBarView: View {
                 Button {
                     
                 } label: {
-                    Text("Поиск")
+                    Text("Искать")
                 }
 
                 Spacer()
