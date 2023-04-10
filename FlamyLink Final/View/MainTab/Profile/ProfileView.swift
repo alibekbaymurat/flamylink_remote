@@ -18,14 +18,13 @@ struct ScrollViewOffsetPreferenceKey: PreferenceKey {
 struct ProfileView: View {
     @StateObject var searchBarState = AdvancedSearchBarViewStateSaver()
     @State private var showSearchBarOnTop = false
-    @State private var showDivider = false
     @State private var scrollOffset = CGFloat.zero 
     
     var body: some View {
         NavigationStack {
-            VStack {
+            VStack(spacing: 4) {
                 ScrollView {
-                    ProfileCell(showDivider: $showDivider)
+                    ProfileCell()
                     
                     LazyVStack {
                         AdvancedSearchBarView(searchBarState: searchBarState)
@@ -45,7 +44,9 @@ struct ProfileView: View {
                 }
                 .coordinateSpace(name: "scrollSpace")
                 .onPreferenceChange(ScrollViewOffsetPreferenceKey.self) { value in
-                    scrollOffset = value
+                    DispatchQueue.main.async {
+                        scrollOffset = value
+                    }
                 }
                 .onChange(of: scrollOffset) { offset in
                     if offset >= 0 {
@@ -66,6 +67,7 @@ struct ProfileView: View {
             }
             .navigationTitle("Профиль")
             .navigationBarTitleDisplayMode(.inline)
+            .background(Color(.systemGray5))
         }
     }
 }

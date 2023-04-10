@@ -9,17 +9,19 @@ import SwiftUI
 
 struct CommentTypeNotificationView: View {
     var body: some View {
-        VStack(alignment: .leading) {
-            Text("Комментарии к Вашему контенту")
-                .bold()
-                .padding()
-            Group {
-                Text("Расул Гамзатов")
-                    .underline() +
-                Text(" ответил на Ваш ") +
-                Text("пост")
+        NavigationStack {
+            ScrollView {
+                
             }
-            PostCell()
+            .toolbar {
+                ToolbarItemGroup(placement: .navigationBarTrailing) {
+                    Button {
+                        
+                    } label: {
+                        Image(systemName: "person")
+                    }
+                }
+            }
         }
     }
 }

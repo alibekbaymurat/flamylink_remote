@@ -31,7 +31,7 @@ struct ContentActionsView: View {
             
             //Comment
             NavigationLink {
-                DetailedContentView(fromCommentButton: true)
+                
             } label: {
                 ContentActionButtonView(imageName: "bubble.left", count: "100M")
             }
@@ -43,7 +43,6 @@ struct ContentActionsView: View {
                 ContentActionButtonView(imageName: "square.and.arrow.up", count: "")
             }
         }
-        .padding(.top)
         .foregroundColor(.black)
         .sheet(isPresented: $showShareView) {
             ShareView()

@@ -37,6 +37,7 @@ struct FeedViewContentChooser: View {
             Divider()
                 .offset(x: 0, y: 16)
         )
+        .background(Color(.white))
     }
 }
 

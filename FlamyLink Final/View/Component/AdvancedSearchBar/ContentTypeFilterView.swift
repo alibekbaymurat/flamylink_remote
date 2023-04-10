@@ -17,10 +17,12 @@ struct ContentTypeFilterView: View {
                     searchBarState.selectedFilterType = item
                 } label: {
                     Text(item.type)
+                        .font(.callout)
                 }
             }
         } label: {
             Text(searchBarState.selectedFilterType.type)
+                .font(.callout)
                 .bold()
                 .foregroundColor(.black)
         }

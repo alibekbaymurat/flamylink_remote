@@ -1,5 +1,5 @@
 //
-//  ContextMenuView.swift
+//  PostContextMenuView.swift
 //  FlamyLink Final
 //
 //  Created by Алибек Баймурат on 10.12.2022.
@@ -7,23 +7,23 @@
 
 import SwiftUI
 
-struct ContextMenuView: View {
+struct PostContextMenuView: View {
     var body: some View {
         Menu {
             //
-            contextMenuButton(description: "Сделать репост")
+            postContextMenuButton(description: "Сделать репост")
                 
             //
-            contextMenuButton(description: "Показать статистику")
+            postContextMenuButton(description: "Показать статистику")
             
             //
-            contextMenuButton(description: "Поделиться")
+            postContextMenuButton(description: "Поделиться")
             
             //
-            contextMenuButton(description: "Копировать ссылку")
+            postContextMenuButton(description: "Копировать ссылку")
             
             //
-            contextMenuButton(description: "Пожаловаться")
+            postContextMenuButton(description: "Пожаловаться")
             
         } label: {
             Image(systemName: "ellipsis")
@@ -37,16 +37,17 @@ struct ContextMenuView: View {
 
 struct ContextMenuView_Previews: PreviewProvider {
     static var previews: some View {
-        ContextMenuView()
+        PostContextMenuView()
     }
 }
 
-extension ContextMenuView {
-    private func contextMenuButton(description: String) -> some View {
+extension PostContextMenuView {
+    private func postContextMenuButton(description: String) -> some View {
         Button {
             
         } label: {
             Text(description)
+                .font(.callout)
         }
     }
 }

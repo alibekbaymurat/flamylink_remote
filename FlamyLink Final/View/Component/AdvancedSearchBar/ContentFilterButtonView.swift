@@ -15,7 +15,7 @@ struct ContentFilterButtonView: View {
             showSheet.toggle()
         } label: {
             Image(systemName: "line.3.horizontal.decrease.circle")
-                .font(.title)
+                .font(.title2)
                 .foregroundColor(.black)
         }
         .sheet(isPresented: $showSheet) {

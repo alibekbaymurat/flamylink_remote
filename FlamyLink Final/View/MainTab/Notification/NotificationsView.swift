@@ -85,39 +85,38 @@ extension NotificationsView {
         var footnoteText: String
         var notificationCount: String
         var body: some View {
-            RoundedRectangle(cornerRadius: 20)
-                .stroke(.black)
-                .frame(height: 80)
-                .overlay {
-                    HStack {
-                        VStack(alignment: .leading) {
-                            Text(titleText)
-                                .font(.title3)
-                                .fontWeight(.bold)
-                                .lineLimit(1)
-                            
-                            Text(footnoteText)
-                                .font(.footnote)
-                                .multilineTextAlignment(.leading)
-                                .lineLimit(2)
-                        }
-                        .foregroundColor(.black)
-                        .padding(.leading)
-                        Spacer()
-                        if notificationCount != "" {
-                            Text("+\(notificationCount)")
-                                .foregroundColor(.white)
-                                .padding(.horizontal, 8)
-                                .background(Color.gray)
-                                .cornerRadius(10)
-                        }
-                        Image(systemName: "control")
-                            .foregroundColor(.black)
-                            .rotationEffect(.degrees(90))
-                            .padding(.trailing)
+            VStack {
+                HStack {
+                    VStack(alignment: .leading) {
+                        Text(titleText)
+                            .font(.callout)
+                            .fontWeight(.bold)
+                            .lineLimit(1)
+                        
+                        Text(footnoteText)
+                            .font(.footnote)
+                            .multilineTextAlignment(.leading)
+                            .lineLimit(2)
                     }
+                    .foregroundColor(.black)
+                    .padding(.leading)
+                    Spacer()
+                    if notificationCount != "" {
+                        Text("+\(notificationCount)")
+                            .foregroundColor(.white)
+                            .padding(.horizontal, 8)
+                            .background(Color.gray)
+                            .cornerRadius(10)
+                    }
+                    Image(systemName: "control")
+                        .foregroundColor(.black)
+                        .rotationEffect(.degrees(90))
+                        .padding(.trailing, 5)
+                    
                 }
-                .padding(.horizontal)
+                
+                Divider()
+            }
         }
     }
 }

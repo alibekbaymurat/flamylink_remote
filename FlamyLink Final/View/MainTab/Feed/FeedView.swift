@@ -10,7 +10,7 @@ import SwiftUI
 struct FeedView: View {
     var body: some View {
         NavigationStack {
-            VStack(spacing: 0) {
+            VStack(spacing: 4) {
                 FeedViewContentChooser()
                 
                 ScrollView {
@@ -22,8 +22,8 @@ struct FeedView: View {
                 }
             }
             .navigationTitle("Лента новостей")
-            
             .navigationBarTitleDisplayMode(.inline)
+            .background(Color(.systemGray5))
         }
     }
 }

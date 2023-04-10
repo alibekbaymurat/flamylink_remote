@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import Combine
 
 class AdvancedSearchBarViewStateSaver: ObservableObject {
     @Published var typedText = ""
@@ -17,21 +16,46 @@ struct AdvancedSearchBarView: View {
     @StateObject var searchBarState = AdvancedSearchBarViewStateSaver()
     
     var body: some View {
-        VStack(spacing: 0) {
+        VStack(spacing: 8) {
             SearchBar(text: $searchBarState.typedText)
+                .padding(8)
             
             HStack {
                 ContentTypeFilterView(searchBarState: searchBarState)
                 
                 Spacer()
                 
+                Button {
+                    
+                } label: {
+                    Text("Поиск")
+                }
+
+                Spacer()
+                
                 ContentFilterButtonView()
             }
-            .padding(.bottom)
             .padding(.horizontal)
-            .frame(height: 40)
+            
+            Divider()
         }
-        .background(Color(.systemGray6))    }
+        .background(
+            RoundedRectangle(cornerRadius: 15)
+                .foregroundColor(Color(.systemGray6))
+        )
+    }
+}
+
+struct SearchBar: View {
+    @Binding var text: String
+    var body: some View {
+        TextField("Что ищете?", text: $text)
+            .font(.callout)
+            .textInputAutocapitalization(.never)
+            .autocorrectionDisabled()
+            .textFieldStyle(.roundedBorder)
+            .foregroundColor(.black)
+    }
 }
 
 struct AdvancedSearchBarView_Previews: PreviewProvider {
