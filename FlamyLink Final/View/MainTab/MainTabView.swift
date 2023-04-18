@@ -17,26 +17,25 @@ struct MainTabView: View {
                     self.selectedTabIndex = 0
                 }
                 .tabItem {
-                    Image(systemName: "newspaper")
+                    Label("Новости", systemImage: "newspaper")
                 }
                 .tag(0)
             
-            SearchView()
+            NavigatorView()
                 .onAppear {
                     self.selectedTabIndex = 1
                 }
                 .tabItem {
-                    Image(systemName: "magnifyingglass")
+                    Label("Навигатор", systemImage: "flame")
                 }
                 .tag(1)
             
-            NewPostView()
+            SenderView()
                 .onAppear {
                     self.selectedTabIndex = 2
                 }
                 .tabItem {
-                    Image(systemName: "plus")
-                    
+                    Label("Sender", systemImage: "bubble.left.and.bubble.right")
                 }
                 .tag(2)
             
@@ -45,16 +44,16 @@ struct MainTabView: View {
                     self.selectedTabIndex = 3
                 }
                 .tabItem {
-                    Image(systemName: "bell")
+                    Label("Уведомления", systemImage: "bell")
                 }
                 .tag(3)
             
-            ProfileView()
+            LibraryView()
                 .onAppear {
                     self.selectedTabIndex = 4
                 }
                 .tabItem {
-                    Image(systemName: "person")
+                    Label("Библиотека", systemImage: "books.vertical.fill")
                 }
                 .tag(4)
         }
