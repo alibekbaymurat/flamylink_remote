@@ -7,16 +7,28 @@
 
 import SwiftUI
 
-struct ContentTypeFilterView: View {
+struct ContentTypePickerView: View {
     @StateObject var searchBarState = AdvancedSearchBarViewStateSaver()
     
     var body: some View {
-        Picker(selection: $searchBarState.selectedFilterType) {
-            ForEach(ContentType.allCases, id: \.self) { item in
-                Text(item.type)
-            }
+        Menu {
+            Picker(selection: $searchBarState.selectedContentType) {
+                ForEach(ContentType.allCases, id: \.self) { item in
+                    Text(item.type)
+                }
+            } label: { }
         } label: {
-            Text(searchBarState.selectedFilterType.type)
+            HStack(alignment: .firstTextBaseline, spacing: 4) {
+                Text(searchBarState.selectedContentType.type)
+                
+                Image(systemName: "chevron.up.chevron.down")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 12, height: 12)
+            }
+            .fontWeight(.semibold)
+            .foregroundColor(.black)
+            .underline()
         }
     }
 }
@@ -41,6 +53,6 @@ enum ContentType: Int, CaseIterable {
 
 struct ContentTypeFilterView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentTypeFilterView()
+        ContentTypePickerView()
     }
 }

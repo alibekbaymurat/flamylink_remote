@@ -9,35 +9,36 @@ import SwiftUI
 
 class AdvancedSearchBarViewStateSaver: ObservableObject {
     @Published var typedText = ""
-    @Published var selectedFilterType: ContentType = .post
+    @Published var selectedContentType: ContentType = .post
 }
 
 struct AdvancedSearchBarView: View {
     @StateObject var searchBarState = AdvancedSearchBarViewStateSaver()
     
     var body: some View {
-        VStack(spacing: 8) {
+        VStack {
             SearchBar(text: $searchBarState.typedText)
                 .padding(8)
             
             HStack {
-                ContentTypeFilterView(searchBarState: searchBarState)
-                
-                Spacer()
+                ContentTypePickerView(searchBarState: searchBarState)
+                    .frame(width: UIScreen.main.bounds.width / 3)
                 
                 Button {
                     
                 } label: {
                     Text("Искать")
+                        .foregroundColor(.black)
+                        .fontWeight(.semibold)
+                        .underline()
                 }
-
-                Spacer()
+                .frame(width: UIScreen.main.bounds.width / 3)
                 
                 ContentFilterButtonView()
+                    .frame(width: UIScreen.main.bounds.width / 3)
             }
-            .padding(.horizontal)
-            
-            Divider()
+            .font(.callout)
+            .padding(.bottom, 8)
         }
         .background(
             RoundedRectangle(cornerRadius: 15)

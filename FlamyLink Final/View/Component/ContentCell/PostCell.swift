@@ -12,9 +12,10 @@ struct PostCell: View {
     
     @State private var numberOfPage = "1"
     var body: some View {
-        VStack(alignment: .leading, spacing: 4) {
+        VStack(alignment: .leading, spacing: 0) {
             DynamicLinkTextView(text: "Ответ к посту", wordsWLinks: ["посту"])
                 .padding(.horizontal)
+                .font(.subheadline)
             
             Divider()
             
@@ -28,8 +29,6 @@ struct PostCell: View {
             
             postPagerView()
                 .padding(.horizontal)
-            
-            Divider()
             
             ContentActionsView()
                 .padding(.horizontal)
@@ -60,7 +59,7 @@ extension PostCell {
                 
             } label: {
                 Text("1 / 210")
-                    .font(.callout)
+                    .font(.subheadline)
                     .underline()
             }
             
@@ -75,7 +74,7 @@ extension PostCell {
         }
         .foregroundColor(.black)
         .fontWeight(.medium)
-        .padding(10)
+        .padding(8)
         .background(
             RoundedRectangle(cornerRadius: 15)
                 .foregroundColor(Color(.systemGray6))
@@ -89,8 +88,6 @@ extension PostCell {
                 ProfileView()
             } label: {
                 Text("Алибек БАЙМУРАТ")
-                    .font(.callout)
-                    .bold()
                     .lineLimit(1)
                     .underline()
                     .foregroundColor(.black)
@@ -121,13 +118,13 @@ extension PostCell {
                 }
             } label: {
                 Image(systemName: "wrench.and.screwdriver")
-                    .font(.system(size: 18))
             }
             
             Spacer()
             
             PostContextMenuView()
         }
+        .font(.callout)
         .fontWeight(.medium)
     }
 }

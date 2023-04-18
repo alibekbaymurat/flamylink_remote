@@ -90,7 +90,7 @@ extension NotificationsView {
                     VStack(alignment: .leading) {
                         Text(titleText)
                             .font(.callout)
-                            .fontWeight(.bold)
+                            .fontWeight(.semibold)
                             .lineLimit(1)
                         
                         Text(footnoteText)
@@ -100,7 +100,9 @@ extension NotificationsView {
                     }
                     .foregroundColor(.black)
                     .padding(.leading)
+                    
                     Spacer()
+                    
                     if notificationCount != "" {
                         Text("+\(notificationCount)")
                             .foregroundColor(.white)
@@ -108,11 +110,10 @@ extension NotificationsView {
                             .background(Color.gray)
                             .cornerRadius(10)
                     }
-                    Image(systemName: "control")
-                        .foregroundColor(.black)
-                        .rotationEffect(.degrees(90))
-                        .padding(.trailing, 5)
                     
+                    Image(systemName: "chevron.right")
+                        .foregroundColor(.black)
+                        .padding(.trailing, 5)
                 }
                 
                 Divider()

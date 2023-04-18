@@ -52,6 +52,7 @@ struct ContentFilterView: View {
                 dissmis()
             }
         }
+        .font(.callout)
     }
 }
 

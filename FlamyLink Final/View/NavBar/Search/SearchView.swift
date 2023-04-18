@@ -20,9 +20,7 @@ struct SearchView: View {
                     }
                 }
             }
-            
             .navigationTitle("Поиск")
-            
             .navigationBarTitleDisplayMode(.inline)
         }
     }

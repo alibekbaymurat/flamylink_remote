@@ -11,7 +11,7 @@ struct FeedView: View {
     var body: some View {
         NavigationStack {
             VStack(spacing: 4) {
-                FeedViewContentChooser()
+                FeedViewContentPicker()
                 
                 ScrollView {
                     LazyVStack {
@@ -20,6 +20,17 @@ struct FeedView: View {
                         }
                     }
                 }
+            }
+            .toolbar {
+                ToolbarItemGroup {
+                    Button {
+                        
+                    } label: {
+                        Image(systemName: "magnifyingglass")
+                    }
+
+                }
+
             }
             .navigationTitle("Лента новостей")
             .navigationBarTitleDisplayMode(.inline)

@@ -33,7 +33,7 @@ struct ContentActionsView: View {
             NavigationLink {
                 
             } label: {
-                ContentActionButtonView(imageName: "bubble.left", count: "100M")
+                ContentActionButtonView(imageName: "bubble.left", count: "999M")
             }
             
             Spacer()
@@ -86,9 +86,10 @@ struct ContentActionButtonView: View {
             }
         }
         .font(.subheadline)
-        .frame(width: count != "" ? 85 : 35, height: 30)
+        .fontWeight(.medium)
+        .frame(width: count != "" ? 80 : 30, height: 30)
         .background(Color(.systemGray6))
-        .cornerRadius(20)
+        .cornerRadius(15)
     }
 }
 

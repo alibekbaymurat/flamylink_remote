@@ -119,10 +119,9 @@ extension NewPostView {
                     
                     Spacer()
                     
-                    Image(systemName: "control")
+                    Image(systemName: "chevron.right")
                         .foregroundColor(.black)
-                        .rotationEffect(.degrees(90))
-                        .padding(.trailing, 5)
+                        .padding(.trailing, 8)
                 }
             }
         }

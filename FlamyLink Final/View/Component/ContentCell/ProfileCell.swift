@@ -9,30 +9,25 @@ import SwiftUI
 
 struct ProfileCell: View {
     var body: some View {
-        VStack(alignment: .leading, spacing: 4) {
+        VStack(alignment: .leading, spacing: 0) {
             HStack {
                 NavigationLink {
                     ProfileView()
                 } label: {
                     Text("Алибек БАЙМУРАТ")
-                        .font(.callout)
-                        .bold()
                         .frame(width: UIScreen.main.bounds.width / 2, alignment: .leading)
                         .lineLimit(1)
                         .underline()
                         .foregroundColor(.black)
                 }
                 
-                Button(action: {
+                Button {
                     
-                }, label: {
+                } label: {
                     Text("Подписаться")
-                        .font(.callout)
                         .frame(width: 130)
-                        .background(Color("customOrange"))
-                        .foregroundColor(.white)
-                        .cornerRadius(10)
-                })
+                        .foregroundColor(Color("customOrange"))
+                }
                 
                 Spacer()
                 
@@ -53,16 +48,17 @@ struct ProfileCell: View {
                     .overlay {
                         VStack {
                             Text("10k")
-                                .fontWeight(.bold)
+                                .fontWeight(.semibold)
                             Text("подписчиков")
                         }
                         .font(.subheadline)
                     }
             }
-            .padding(.bottom)
+            .padding(.vertical,8)
             
             Text("  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a sollicitudin mi. Vivamus lobortis risus lectus, sit amet efficitur velit fermentum et.")
                 .font(.callout)
+                .padding(.vertical, 8)
             
             ContentActionsView()
         }

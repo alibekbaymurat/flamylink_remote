@@ -14,14 +14,14 @@ struct ContentFilterButtonView: View {
         Button {
             showSheet.toggle()
         } label: {
-            Image(systemName: "line.3.horizontal.decrease.circle")
-                .font(.title2)
+            Text("Фильтр")
                 .foregroundColor(.black)
+                .underline()
+                .fontWeight(.semibold)
         }
         .sheet(isPresented: $showSheet) {
             ContentFilterView(contentFilterState: contentFilterState)
         }
-
     }
 }
 

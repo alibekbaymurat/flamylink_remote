@@ -55,7 +55,6 @@ public struct MultilineHStack: View {
                 ForEach(self.items.indices, id: \.self) { index in
                     self.items[index].background(self.backgroundView()).offset(self.getOffset(at: index, geometry: geometry))
                         .foregroundColor(.secondary)
-                        .font(.subheadline)
                 }
             }
         }

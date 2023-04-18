@@ -28,8 +28,6 @@ struct PostContextMenuView: View {
         } label: {
             Image(systemName: "ellipsis")
                 .rotationEffect(Angle(degrees: 90))
-                .font(.system(size: 16))
-                .frame(width: 20, height: 20)
                 .foregroundColor(.black)
         }
     }
